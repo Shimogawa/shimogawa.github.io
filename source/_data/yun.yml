@@ -1,0 +1,160 @@
+avatar:
+  enable: true
+  url: /images/avatar.jpg
+  rounded: true
+  opacity: 1
+  mickey_mouse: false
+  status:
+    enable: true
+    emoji: 🥺
+    message: 哭哭
+
+banner:
+  enable: true
+  title: 暁の花、咲きけり
+  src: /js/ui/banner.js
+  border: true
+  cloud:
+    enable: true
+    color: "white"
+  go_down:
+    enable: true
+    icon: icon-arrow-down-s-line
+
+# notice:
+#   enable: true
+#   content: Thanks for playing my game.
+
+social:
+  # - name: RSS
+  #   # set rss in your root config
+  #   # https://github.com/hexojs/hexo-generator-feed
+  #   link: /atom.xml # config.feed.path
+  #   icon: icon-rss-line
+  #   color: orange
+  - name: QQ
+    # https://isux.tencent.com/wp-content/uploads/2016/05/20160512101222609.pdf
+    link: http://wpa.qq.com/msgrd?v=3&uin=714026292&site=qq&menu=yes
+    icon: icon-qq-line
+    color: "#12B7F5"
+  - name: GitHub
+    link: https://github.com/Shimogawa
+    icon: icon-github-line
+    color: "#181717"
+  - name: E-Mail
+    link: mailto:admin@rebuild.moe
+    icon: icon-mail-line
+    color: "#8E71C1"
+  - name: 网易云音乐
+    link: https://music.163.com/#/user/home?id=267787075
+    icon: icon-netease-cloud-music-line
+    color: "#C10D0C"
+  - name: 哔哩哔哩动画
+    link: https://space.bilibili.com/2059527
+    icon: icon-bilibili-line
+    color: "#FF8EB3"
+  - name: Twitter
+    link: https://twitter.com/nanomikairete
+    icon: icon-twitter-line
+    color: "#1da1f2"
+
+menu:
+  home:
+    path: /
+    icon: icon-home-4-line
+  list:
+    - type: archives
+      path: /archives/
+      icon: icon-archive-line
+    - type: categories
+      path: /categories/
+      icon: icon-folder-2-line
+    - type: tags
+      path: /tags/
+      icon: icon-price-tag-3-line
+  custom:
+    title: Neko Git
+    path: https://git.rebuild.moe
+    icon: icon-external-link-line
+
+pages:
+  - name: Boys (maybe girls) Next Door
+    url: /links/
+    icon: icon-genderless-line
+    color: dodgerblue
+  - name: 可爱的女孩子
+    url: /girls/
+    icon: icon-women-line
+    color: pink
+
+reward:
+  enable: false
+  icon: icon-hand-coin-line
+  comment: I'm so cute. Please give me money.<br>我很可爱 请给我钱
+  # url: https://github.com/YunYouJun/yunyoujun.github.io/issues/96
+  methods:
+    - name: 支付宝
+      path: /images/donate/alipay-qrcode.jpg
+      color: "#00A3EE"
+      icon: icon-alipay-line
+    - name: QQ 支付
+      path: /images/donate/qqpay-qrcode.png
+      color: "#12B7F5"
+      icon: icon-qq-line
+    - name: 微信支付
+      path: /images/donate/wechatpay-qrcode.jpg
+      color: "#2DC100"
+      icon: icon-wechat-pay-line
+
+katex:
+  copy_tex: true
+  global: false
+
+creative_commons:
+  license: by-nc-sa
+  post: true
+  language: deed.zh
+  clipboard: false
+
+wordcloud:
+  enable: true
+  height: 350
+
+comment:
+  enable: true
+  tips:
+    - 暂时关闭了评论系统。
+    - Comment temporarily closed.
+    # - 若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。
+    # - 若没有本文 Issue，您可以使用 Comment 模版新建。
+  candidates:
+    # - valine
+    # - utterances
+
+github_issues:
+  enable: false
+  username: Shimogawa
+  repository: shimogawa.github.io
+  filters: is:issue
+
+engine_search:
+  enable: false
+
+local_search:
+  enable: true
+  src: /js/search/local-search.js
+
+girls:
+  enable: true
+
+toc:
+  list_number: true
+  max_depth: 5
+  min_depth: 1
+  placeholder: No ToC available for now...
+  collapse: true
+
+mourn:
+  enable: true
+  days:
+    - "4-4"
