@@ -857,7 +857,7 @@ body::before {
   font-size: 0.9rem;
   margin: 2rem 0;
   padding: 0.5rem 1rem;
-  border-left: 3px solid #f8722a;
+  border-left: 3px solid #ff5252;
   background-color: var(--hty-bg-color);
   list-style: none;
   word-break: break-all;
@@ -1155,6 +1155,9 @@ body::before {
   padding-left: 1rem;
   padding-right: 1rem;
   justify-content: space-between;
+}
+.post-card__actions .icon {
+  margin-bottom: -1px;
 }
 .post-card-tag {
   display: inline-flex;
@@ -1468,7 +1471,7 @@ pre[class*='language-']:hover .copy-btn {
   display: inline-block;
   text-align: center;
   padding: 0.5rem;
-  color: #ff8718;
+  color: #df667f;
   border-radius: 100%;
   width: 1.5rem;
   height: 1.5rem;
@@ -1924,6 +1927,7 @@ pre[class*='language-']:hover .copy-btn {
 }
 .search-popup {
   backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
