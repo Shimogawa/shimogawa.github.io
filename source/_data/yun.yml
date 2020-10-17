@@ -164,10 +164,10 @@ utterances:
 
 valine:
   enable: true
-  appId: eOqK1cJGouFnL29iDTFUhM8T-gzGzoHsz
-  appKey: QkHeJzYGxssMxaMRo4URc6rw
+  appId: yhOSuPGGylx1z2fQesIekFsm-MdYXbMMI
+  appKey: Qcvy0HlcSpaIiHVOqM1VO9tj
   placeholder: Your comment goes here...
-  serverURLs: https://www.rebuild.moe
+  # serverURLs: https://www.rebuild.moe
   meta:
     - nick
     - mail

@@ -113,7 +113,7 @@ language: ja
 
 所以，表注方法是：
 
-> <p style="font-size: 20px;height: 150px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">楚人　有<sub style="color: darkgreen"><b>下</b></sub>鬻<sub style="color: red"><b>二</b></sub>盾与<sub style="color: red"><b>一</b></sub><sub style="color: #d3ad43">レ</sub>矛者<sub style="color: darkgreen"><b>上</b></sub>。</p>
+> <p style="font-size: 20px;height: 150px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">楚人　有<sub style="color: darkgreen"><b>下</b></sub>鬻<sub style="color: red"><b>二</b></sub>盾与<span><sub style="color: red;letter-spacing: -11px;"><b>一</b></sub><sub style="color: #d3ad43">レ</sub></span>矛者<sub style="color: darkgreen"><b>上</b></sub>。</p>
 
 那么顺序就变成了：
 
