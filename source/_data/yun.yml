@@ -1,15 +1,12 @@
 head:
   css:
-    fonts: 
-      - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&display=swap
-      - https://fonts.googleapis.com/css2?family=Fira+Mono&family=Source+Sans+Pro&display=swap
+    fonts: https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&family=Fira+Mono&family=Source+Sans+Pro&display=swap
 
 font:
   cdn:
     enable: true
     lib:
-      - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&display=swap
-      - https://fonts.googleapis.com/css2?family=Fira+Mono&family=Source+Sans+Pro&display=swap
+      - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&family=Fira+Mono&family=Source+Sans+Pro&display=swap
   serif:
     family: "'Songti SC', 'Noto Serif SC', STZhongsong, STKaiti, KaiTi, Roboto, serif"
     weight: 900
@@ -251,6 +248,12 @@ toc:
   min_depth: 1
   placeholder: No ToC available for now...
   collapse: true
+
+cursor:
+  enable: true
+  default: https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur
+  pointer: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur
+  text: https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur
 
 mourn:
   enable: true
