@@ -52,7 +52,7 @@ body {
   background: #8e71c1;
 }
 a {
-  color: #0078e7;
+  color: var(--smc-link-color);
   text-decoration: none;
   transition: color 0.1s;
 }
@@ -171,6 +171,21 @@ body::before {
   to {
     opacity: 1;
   }
+}
+body {
+  cursor: url("https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur"), auto;
+}
+a {
+  cursor: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur"), auto;
+}
+a:hover {
+  cursor: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur"), auto;
+}
+.hty-icon-button {
+  cursor: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur"), pointer;
+}
+input {
+  cursor: url("https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur"), auto;
 }
 :root {
   --banner-line-color: #000;
@@ -719,7 +734,7 @@ body::before {
 }
 .wordcloud #wordcloud-canvas,
 .wordcloud #wordcloud-sidebar-canvas {
-  cursor: url("$cursor-pointer"), pointer;
+  cursor: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur"), pointer;
 }
 .wordcloud #wordbox {
   pointer-events: none;
@@ -1392,7 +1407,7 @@ pre[class*='language-']:hover .copy-btn {
   height: 1.5rem;
 }
 .markdown-body {
-  color: var(--hty-text-color) !important;
+  color: var(--hty-text-color);
   font-weight: 400;
   font-family: 'Source Sans Pro', Roboto, Arial, 'Noto Serif SC', 'Microsoft YaHei', sans-serif;
 }
@@ -1432,7 +1447,7 @@ pre[class*='language-']:hover .copy-btn {
 .post-nav-next {
   display: inline-flex;
   align-items: center;
-  color: #0078e7;
+  color: var(--smc-link-color);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1626,7 +1641,7 @@ pre[class*='language-']:hover .copy-btn {
   margin: 0;
 }
 .post-toc ol .toc-link {
-  color: #0078e7;
+  color: var(--smc-link-color);
 }
 .post-toc ol .toc-link:hover {
   color: #db2828;
@@ -2037,6 +2052,7 @@ pre[class*='language-']:hover .copy-btn {
     --banner-line-color: #fff;
     --banner-char-color: #fff;
     --post-block-bg-color: #1b1f2e;
+    --smc-link-color: #3ca1ff;
   }
   :root:not([data-user-color-scheme]) ::-webkit-input-placeholder {
     color: #fff;
@@ -2112,6 +2128,7 @@ pre[class*='language-']:hover .copy-btn {
   --banner-line-color: #fff;
   --banner-char-color: #fff;
   --post-block-bg-color: #1b1f2e;
+  --smc-link-color: #3ca1ff;
 }
 [data-user-color-scheme='dark'] ::-webkit-input-placeholder {
   color: #fff;
