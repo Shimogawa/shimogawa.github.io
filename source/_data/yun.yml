@@ -147,7 +147,7 @@ comment:
     - 如果不想登录 GitHub，请使用 Valine
   candidates:
     - valine
-    # - utterances
+    - utterances
 
 github_issues:
   enable: true
@@ -156,7 +156,7 @@ github_issues:
   filters: is:issue
 
 utterances:
-  enable: false
+  enable: true
   repo: Shimogawa/shimogawa.github.io
   issue-term: pathname
   label: utter
