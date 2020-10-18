@@ -95,7 +95,12 @@ language: ja
 
 所以，表注方法是：
 
-> <p style="font-size: 20px;height: 190px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">有<sub style="color: darkgreen"><b>下</b></sub>観<sub style="color: red"><b>二</b></sub>梅花<sub style="color: red"><b>一</b></sub>者<sub style="color: darkgreen"><b>上</b></sub>。</p>
+> <p style="font-size: 20px;height: 190px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">有<sub style="color: darkgreen">下</sub>観<sub style="color: red"><b>二</b></sub>梅花<sub style="color: red"><b>一</b></sub>者<sub style="color: darkgreen">上</sub>。</p>
+
+那么顺序就变成了：
+
+> 有　観　梅　花　者。
+> ５　３　１　２　４
 
 可以不止有上下点，有时会有中。需要按实际情况使用。
 
@@ -113,7 +118,7 @@ language: ja
 
 所以，表注方法是：
 
-> <p style="font-size: 20px;height: 150px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">楚人　有<sub style="color: darkgreen"><b>下</b></sub>鬻<sub style="color: red"><b>二</b></sub>盾与<span><sub style="color: red;letter-spacing: -11px;"><b>一</b></sub><sub style="color: #d3ad43">レ</sub></span>矛者<sub style="color: darkgreen"><b>上</b></sub>。</p>
+> <p style="font-size: 20px;height: 150px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">楚人　有<sub style="color: darkgreen">下</sub>鬻<sub style="color: red"><b>二</b></sub>盾与<span><sub style="color: red;letter-spacing: -11px;"><b>一</b></sub><sub style="color: #d3ad43">レ</sub></span>矛者<sub style="color: darkgreen">上</sub>。</p>
 
 那么顺序就变成了：
 
@@ -136,14 +141,81 @@ language: ja
 
 注意，这里有几个字是不读的，例如「**而**」和「**矣**」，它们被叫做「<ruby>置字<rp>(</rp><rt>おきじ</rt><rp>)</rp></ruby>」。这样一来，就可以很简单地用古日语读出：
 
-> <p style="font-size: 20px;height: 220px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">子曰く、故きを温めて新しきを知らば、<ruby>以<rp>(</rp><rt>もっ</rt><rp>)</rp></ruby>て師<ruby>為<rp>(</rp><rt>た</rt><rp>)</rp></ruby>る<ruby>可<rp>(</rp><rt>べ</rt><rp>)</rp></ruby>し。</p>
+> <p style="font-size: 20px;height: 220px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">子曰く、故きを温めて新しきを知らば、<ruby>以<rp>(</rp><rt>もっ</rt><rp>)</rp></ruby>て師<ruby>為<rp>(</rp><rt>た</rt><rp>)</rp></ruby>るべし。</p>
 
-而上面这个句子，就被叫做「書き下し文」。书下文有很多规则，例如助词不写汉字之类，这里不详细阐述。
+而上面这个句子，就被叫做「書き下し文」。书下文有很多规则，例如助词不写汉字之类，这里不详细阐述。我们主要还是为了能用日语读出文言文。我觉得这是很有趣的一件事。
 
 ### <div><ruby>再読文字<rp>(</rp><rt>さいどくもじ</rt><rp>)</rp></ruby></div>
 
-摸了摸了🐟🐟🐟
+有时候，一个汉字的意思在日语里需要通过两个词表达。这个时候，这个汉字就需要读两遍，称为「再読文字」。再读文字一共有8个，下面就会介绍。
 
+再读文字的特点是，它们本身都是副词而不是助词，需要读出来。但是，又有一个助词需要放在其它位置，也属于这个字的意思的一部分，也需要读出来。所以，就需要读两遍。
+
+#### 未
+
+「未」这个字，表示「还没有」的意思，所以应该表否定。我们知道日语中否定是放在最后的，例如现代日语中的「ない」和古日语中的「ず」。所以，这个字需要读出来，但是否定也应该表示。由于副词和终助词「ず」无法放在一起，所以它就变成了一个再读文字。
+
+読み：いまダ～ず
+
+我们来看一个最简单的例子：
+
+> 未　来
+
+未来，即还没有到来的事。如果要读出，应该是：
+
+> <ruby>未<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>だ<ruby>来<rp>(</rp><rt>きた</rt><rp>)</rp></ruby>らず
+
+所以，使用返点之后会变成这样：
+
+> <ruby>未<rp>(</rp><rt>いま・ず</rt><rp>)</rp></ruby><sub style="color: #d3ad43">レ</sub><sup>ダ</sup><ruby>来<rp>(</rp><rt>きた</rt><rp>)</rp></ruby><sup>ラ</sup>
+
+在书写中，再读文字的振り仮名竖着会右边写第一遍的读音，左边写第二遍的读音，而这里使用了点代替。再读文字的送り仮名一样，也是跟着左右写，这里因为「未」的第二遍没有送り仮名，所以没有写出。
+
+注意，在书写書き下し文时，只应出现**一遍**这个汉字，作为助词的那一次需要使用平假名写出。我们看一个更复杂一些的例子：
+
+> 未　聞　好　学　者　也。
+
+我们先表注返点：
+
+> <p style="font-size: 20px;height: 220px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;"><ruby>未<rp>(</rp><rt>いま・ざ</rt><rp>)</rp></ruby><sub>ル</sub><sup>ダ</sup><sub style="color: #d3ad43">レ</sub>聞<sup>カ</sup><sub style="color: red;"><b>二</b></sub>好<sup>ム</sup><sub style="color: #d3ad43">レ</sub>学<sup>ヲ</sup>者<sup>ヲ</sup><sub style="color: red;"><b>一</b></sub><ruby>也<rp>(</rp><rt>なり</rt><rp>)</rp></ruby>。</p>
+
+注意这里的助词「ず」的变形，变形之后也需要表注送り仮名。接下来我们写出书下文：
+
+> <p style="font-size: 20px;height: 220px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;"><ruby>未<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>だ学を好む者を聞か<span style="color: darkcyan">ざるなり</span>。</p>
+
+注意这里标出颜色的地方，是不能用汉字写出的。
+
+#### 将・且
+
+表示「将要」的意思时是再读文字。
+
+読み：まさニ～ントす
+
+看一个例子：
+
+> 将　来
+
+表注返点后是：
+
+> <ruby>将<rp>(</rp><rt>まさ・す</rt><rp>)</rp></ruby><sup>ニ</sup><sub style="color: #d3ad43">レ</sub>来<sup>ラント</sup>
+
+书下文便是：
+
+> <ruby>将<rp>(</rp><rt>まさ</rt><rp>)</rp></ruby>に来らんとす
+
+再来看一个：
+
+> 伐趙、趙将亡矣。
+
+表注返点之后是：
+
+> <p style="font-size: 20px;height: 220px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;"><ruby>伐<rp>(</rp><rt>う</rt><rp>)</rp></ruby><sup>チ</sup><sub style="color: #d3ad43">レ</sub><ruby>趙<rp>(</rp><rt>ちょう</rt><rp>)</rp></ruby><sup>ヲ</sup>、趙将<sup>ニ</sup><sub style="color: #d3ad43">レ</sub>亡<sup>ビント</sup><span style="color: blue">矣</span>。</p>
+
+书下文便是：
+
+> <p style="font-size: 20px;height: 220px;-webkit-writing-mode: vertical-rl;-moz-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;writing-mode: vertical-rl;">趙を伐ち、趙将に亡びんとす。</p>
+
+剩下的摸了摸了🐟🐟🐟🐟
 
 ## 例文
 

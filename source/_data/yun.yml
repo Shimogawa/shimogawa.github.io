@@ -246,10 +246,10 @@ girls:
 
 toc:
   list_number: true
-  max_depth: 5
+  max_depth: 4
   min_depth: 1
   placeholder: No ToC available for now...
-  collapse: true
+  collapse: false
 
 cursor:
   enable: true

@@ -73,7 +73,7 @@ When $x = 2$, we have that
 
 #### Videos
 
-<iframe src="//player.bilibili.com/player.html?aid=498036840&bvid=BV1mK41157UN&cid=186132733&page=1" scrolling="no" height="908" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+{% iframe //player.bilibili.com/player.html?aid=498036840&bvid=BV1mK41157UN&cid=186132733&page=1 %}
 
 - [x] Verdict pass
 
