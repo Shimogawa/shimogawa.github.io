@@ -1,5 +1,5 @@
 ---
-title: 实分析作弊纸
+title: 数学分析作弊纸
 categories: 
 - Math
 - Analysis
@@ -10,9 +10,9 @@ language: zh-CN
 math: true
 ---
 
-<!-- <h2 style="text-align: center">公式作弊纸</h2> -->
+<div style="display: none;">$\gdef\Q{\mathbb{Q}}$</div>
 
-### 0, 1 实数
+### 实数
 <p>
     <b>公理1.1：</b> $\N$是良序的，对于所有$\N$的非空子集$A$，$A$中必有最小元素。
 </p>
@@ -23,13 +23,13 @@ math: true
     <b>定理1.3：</b>如果$A$和$B$是可数的，那么$A \times B$也是可数的。
 </p>
 <p>
-    <b>推论1.4：</b>$\mathbb{Q}$是可数的。
+    <b>推论1.4：</b>$\Q$是可数的。
 </p>
 <p>
     <b>定理1.5：（康托）</b>对于非空集$A$，$|A| &lt; |\mathcal{P}(A)|$，其中$\mathcal{P}(A)$是幂集。
 </p>
 <p>
-    <b style="color: red;">定理1.6：</b><b>确界原理</b> 如果$S$是有序集，那么对任意的非空子集$E \subset S$，如果$E$有上界，那么必有上确界，如果有下界，那么必有下确界。$\mathbb{Q}$不适用这个原理。
+    <b style="color: red;">定理1.6：</b><b>确界原理</b> 如果$S$是有序集，那么对任意的非空子集$E \subset S$，如果$E$有上界，那么必有上确界，如果有下界，那么必有下确界。$\Q$不适用这个原理。
 </p>
 <p>
     <b>定理1.7：</b>$\forall n \in \N, \forall x \in \R, x \ge 0, \exists ! y \ge 0$使得$y^n = x$。
@@ -38,7 +38,7 @@ math: true
     <b style="color: red;">定理1.8：</b><b>阿基米德性质</b> $\forall x &gt; 0, y \in \R, \exists n \in \N$使得$nx > y$。
 </p>
 <p>
-    <b>推论1.9：稠密性</b> $\mathbb{Q}$在$\R$中稠密，即$\forall x &lt; y \in \R, \exists q \in \mathbb{Q}$使得$x &lt; q &lt; y$。
+    <b>推论1.9：稠密性</b> $\Q$在$\R$中稠密，即$\forall x &lt; y \in \R, \exists q \in \Q$使得$x &lt; q &lt; y$。
 </p>
 <p>
     <b>定理1.10：</b>如果$S \subset \R$，并且$S$有上界，令$M = \sup S$，那么有$\forall \varepsilon > 0, \exists x \in S$使得$M - \varepsilon &lt; x &lt; M$。
@@ -52,7 +52,7 @@ math: true
 <br><br>
 <hr>
 
-### 2 数列
+### 数列
 <p>
     <b style="color: red;">定义2.1：</b><b>数列收敛</b> 数列$x_n$趋向于或收敛于$x$的定义为$\forall \varepsilon > 0, \exists N \in \N$使得$|x_n - x| &lt; \varepsilon, \forall n \ge N$。
 </p>
@@ -142,7 +142,7 @@ math: true
 <br><br>
 <hr>
 
-### 3 连续函数
+### 连续函数
 <p>
     <b style="color: red;">定义3.1：</b><b>聚点</b> 设$S \subset \R$。$x \in \R$是$S$的一个聚点，如果$\forall \varepsilon > 0$，集合$(x-\varepsilon, x+\varepsilon) \cap S \backslash \{x\}$非空。
 </p>
@@ -165,7 +165,7 @@ math: true
     <b style="color: red;">定理3.7：</b>$f$在$c$连续的充要条件是$\forall x_n \to c, x_n \in S$，都有$f(x_n) \to f(c)$。
 </p>
 <p>
-    <b>推论3.8：</b>$f(x) = x^r, r \in \mathbb{Q}$是连续的。
+    <b>推论3.8：</b>$f(x) = x^r, r \in \Q$是连续的。
 </p>
 <p>
     <b>定理3.9：</b>若有$f: A \to B, g: B \to \R$，并且$f$在$c$连续，$g$在$f(c)$连续，那么复合函数$h = g \circ f : A \to \R$在$c$连续（$h(x) = g(f(x))$）。
@@ -221,7 +221,7 @@ math: true
 <br><br>
 <hr>
 
-### 4 导数
+### 导数
 <p>
     <b style="color: red;">定义4.1：</b><b>导数</b> 若函数$f:I \to \R$，$c \in I$是一个聚点。如果极限$\displaystyle L = \lim_{x \to c} \frac{f(x) - f(c)}{x-c}$存在，那么我们称$f$在$c$可导，并且$L$叫做$f$在$c$的导数，记作$f'(c) = L$。
 </p>
@@ -269,7 +269,7 @@ math: true
 <br><br>
 <hr>
 
-### 5 黎曼积分
+### 黎曼积分
 <p>
     <b>定义5.1：划分</b> 如果有$a = x_0 \lt x_1 \lt ... \lt x_n = b$，那么称$P = \{x_0, x_1, ..., x_n\}$是在区间$[a,b]$上的一个划分，并且，记$\Delta x_i = x_i - x_{i-1}$。对于一个在这个划分上的函数$f(x)$，记$\displaystyle m_i = \inf_{[x_{i-1}, x_i]} f(x)$，$\displaystyle M_i = \sup_{[x_{i-1}, x_i]} f(x)$。
 </p>
@@ -277,49 +277,49 @@ math: true
     <b>定义5.2：上下达布和</b> 对于一个划分$P$，定义上达布和$\displaystyle U(P, f) = \sum_{i=1}^n M_i \Delta x_i$，和下达布和$\displaystyle L(P, f) = \sum_{i=1}^n m_i \Delta x_i$。
 </p>
 <p>
-    <b>定义5.3：上下积分</b> 设$P$为划分，定义上积分$\displaystyle \overline \int^b_a f = {\inf}_P U(P, f)$，下积分$\displaystyle \underline {\int}^b_a f$。
+    <b>定义5.3：上下积分</b> 设$P$为划分，定义上积分$\displaystyle \overline{\int^b_a} f = \inf_P U(P, f)$，下积分$\displaystyle \underline {\int^b_a} f = \sup_P L(P, f)$。
 </p>
 <p>
-    <b style="color: red;">定义5.3：</b><b>黎曼可积</b> 函数$f: [a,b] \to \R$是黎曼可积的，如果$f$有界并且$\displaystyle \overline \int^b_a f = \underline {\int}^b_a f = \int^b_a f$。我们称$\displaystyle \int^b_a f$为黎曼积分，并且记$\displaystyle \int^b_a f = \int^b_a f(x) dx$。如果$f$在$[a,b]$上黎曼可积，记作$f \in \mathscr{R} [a,b]$。
+    <b style="color: red;">定义5.4：</b><b>黎曼可积</b> 函数$f: [a,b] \to \R$是黎曼可积的，如果$f$有界并且$\displaystyle \overline {\int^b_a} f = \underline {\int^b_a} f = \int^b_a f$。我们称$\displaystyle \int^b_a f$为黎曼积分，并且记$\displaystyle \int^b_a f = \int^b_a f(x) dx$。如果$f$在$[a,b]$上黎曼可积，记作$f \in \mathscr{R} [a,b]$。
 </p>
 <p>
-    <b style="color: red;">定理5.4：</b> $f:[a,b] \to \R$是黎曼可积的充要条件是对于任意$\varepsilon > 0$，存在一个划分$P$使得$0 \le U(P, f) - L(P, f) \lt \varepsilon$。
+    <b style="color: red;">定理5.5：</b> $f:[a,b] \to \R$是黎曼可积的充要条件是对于任意$\varepsilon > 0$，存在一个划分$P$使得$0 \le U(P, f) - L(P, f) \lt \varepsilon$。
 </p>
 <p>
-    <b>定义5.5：Refinement</b> 我们称$\widetilde P$是划分$P$的Refinement，如果$P \subset \widetilde P$。
+    <b>定义5.6：Refinement</b> 我们称$\widetilde P$是划分$P$的Refinement，如果$P \subset \widetilde P$。
 </p>
 <p>
-    <b>推论5.6：</b> 假设$P_1$和$P_2$是在$[a,b]$上的划分，那么$P = P_1 \cup P_2$是$P_1$和$P_2$的Refinement，并且有$L(P_1,f) \le L(P,f) \le U(P,f) \le U(P_2,f)$。
+    <b>推论5.7：</b> 假设$P_1$和$P_2$是在$[a,b]$上的划分，那么$P = P_1 \cup P_2$是$P_1$和$P_2$的Refinement，并且有$L(P_1,f) \le L(P,f) \le U(P,f) \le U(P_2,f)$。
 </p>
 <p>
-    <b>命题5.7：</b> 如果$m \le M$，那么$m(b-a) \le L(P,f) \le U(P,f) \le M(b-a)$。
+    <b>命题5.8：</b> 如果$m \le M$，那么$m(b-a) \le L(P,f) \le U(P,f) \le M(b-a)$。
 </p>
 <p>
-    <b style="color: red;">定理5.8：</b> 如果$f:[a,b] \to \R$是连续的，那么它是黎曼可积的。
+    <b style="color: red;">定理5.9：</b> 如果$f:[a,b] \to \R$是连续的，那么它是黎曼可积的。
 </p>
 <p>
-    <b>推论5.9：</b> 假设$f$是连续的并且$f \ge 0$。如果$\int_a^b f = 0$，那么$f(x) = 0, \forall x$。
+    <b>推论5.10：</b> 假设$f$是连续的并且$f \ge 0$。如果$\int_a^b f = 0$，那么$f(x) = 0, \forall x$。
 </p>
 <p>
-    <b style="color: red;">定理5.10：</b> 如果$f:[a,b] \to \R$是单调的，那么$f$是黎曼可积的。
+    <b style="color: red;">定理5.11：</b> 如果$f:[a,b] \to \R$是单调的，那么$f$是黎曼可积的。
 </p>
 <p>
-    <b>定理5.11：</b> 假设$f:[a,b] \to \R$有界并且数列$a_n$单调递减，$a_n \to a$，数列$b_n$单调递增并且$b_n \to b$。如果对于所有的$n \in \N$，$f$在$[a_n, b_n]$是黎曼可积的，那么$f$在$[a,b]$上是黎曼可积的，并且$\displaystyle \int^b_a f = \lim_{n \to \infty} \int^{b_n}_{a_n} f$。
+    <b>定理5.12：</b> 假设$f:[a,b] \to \R$有界并且数列$a_n$单调递减，$a_n \to a$，数列$b_n$单调递增并且$b_n \to b$。如果对于所有的$n \in \N$，$f$在$[a_n, b_n]$是黎曼可积的，那么$f$在$[a,b]$上是黎曼可积的，并且$\displaystyle \int^b_a f = \lim_{n \to \infty} \int^{b_n}_{a_n} f$。
 </p>
 <p>
-    <b>定理5.12：</b> 如果$f$有界并且$f$有有限个间断点，那么$f$是黎曼可积的。
+    <b>定理5.13：</b> 如果$f$有界并且$f$有有限个间断点，那么$f$是黎曼可积的。
 </p>
 <p>
-    <b style="color: red;">定理5.13：微积分基本定理1 牛顿-莱布尼茨公式</b> 假设$F$在$[a,b]$上连续，并且在$(a,b)$上可导，令$f = F'$。如果$f \in \mathscr R[a,b]$，那么$\displaystyle \int^b_a f = F(b) - F(a)$。
+    <b style="color: red;">定理5.14：微积分基本定理1 牛顿-莱布尼茨公式</b> 假设$F$在$[a,b]$上连续，并且在$(a,b)$上可导，令$f = F'$。如果$f \in \mathscr R[a,b]$，那么$\displaystyle \int^b_a f = F(b) - F(a)$。
 </p>
 <p>
-    <b style="color: red;">定理5.14：微积分基本定理2</b> 假设$f \in \mathscr R [a,b]$，并且$x \in [a,b]$。定义$\displaystyle F(x) = \int^x_a f$，那么$F$在$[a,b]$上连续。如果$f \in C^0[a,b]$（$C^n[a,b]$指$n$阶连续可导），那么$F$在$[a,b]$上可导，并且$F'(c) = f(c)$。
+    <b style="color: red;">定理5.15：微积分基本定理2</b> 假设$f \in \mathscr R [a,b]$，并且$x \in [a,b]$。定义$\displaystyle F(x) = \int^x_a f$，那么$F$在$[a,b]$上连续。如果$f \in C^0[a,b]$（$C^n[a,b]$指$n$阶连续可导），那么$F$在$[a,b]$上可导，并且$F'(c) = f(c)$。
 </p>
 <p>
-    <b>定理5.15：换元法</b> 假设$g \in C^1[a,b]$，并且$g([a,b]) \subset [c,d]$，令$f \in C^0 [c,d]$，那么有$\displaystyle \int^b_a f(g(x)) g'(x) dx = \int^{g(b)}_{g(a)} f(s) ds$。
+    <b>定理5.16：换元法</b> 假设$g \in C^1[a,b]$，并且$g([a,b]) \subset [c,d]$，令$f \in C^0 [c,d]$，那么有$\displaystyle \int^b_a f(g(x)) g'(x) dx = \int^{g(b)}_{g(a)} f(s) ds$。
 </p>
 <p>
-    <b>定理5.16：自然对数函数</b> 存在唯一的函数$L: (0, +\infty) \to \R$，并且有以下性质：
+    <b>定理5.17：自然对数函数</b> 存在唯一的函数$L: (0, +\infty) \to \R$，并且有以下性质：
 </p>
 <ol>
     <li>
@@ -335,17 +335,17 @@ math: true
         $L(xy) = L(x) + L(y)$；
     </li>
     <li>
-        对于任意$q \in \mathbb{Q}$，有$L(x^q) = qL(x)$。
+        对于任意$q \in \Q$，有$L(x^q) = qL(x)$。
     </li>
 </ol>
 <p>
     函数$L$又能记作$\ln(x)$或$\log(x)$。
 </p>
 <p>
-    <b>定理5.17：自然对数函数幂级数展开</b> $\displaystyle \ln(x+1) = \sum_{k = 1}^\infty \frac{x^k}{k!}(-1)^{k-1}$。 
+    <b>定理5.18：自然对数函数幂级数展开</b> $\displaystyle \ln(x+1) = \sum_{k = 1}^\infty \frac{x^k}{k!}(-1)^{k-1}$。 
 </p>
 <p>
-    <b>定理5.18：自然指数函数</b> 存在唯一的函数$E: \R \to (0, +\infty)$，并且有以下性质：
+    <b>定理5.19：自然指数函数</b> 存在唯一的函数$E: \R \to (0, +\infty)$，并且有以下性质：
 </p>
 <ol>
     <li>
@@ -358,26 +358,26 @@ math: true
         $E(x+y) = E(x)E(y)$；
     </li>
     <li>
-        对于任意$q \in \mathbb{Q}$，$E(qx) = E(x)^q$。
+        对于任意$q \in \Q$，$E(qx) = E(x)^q$。
     </li>
 </ol>
 <p>
     函数$E$又能记作$\exp(x)$。
 </p>
 <p>
-    <b>定义5.19：自然常数</b> 欧拉常数$e = E(1)$。并且，令$E(x) = e^x = exp(x)$等价。
+    <b>定义5.20：自然常数</b> 欧拉常数$e = E(1)$。并且，令$E(x) = e^x = exp(x)$等价。
 </p>
 <p>
-    <b>定义5.20：</b> 对于任意$x>0$和$y \in \R$，定义$x^y = \exp(y \ln x)$。
+    <b>定义5.21：</b> 对于任意$x>0$和$y \in \R$，定义$x^y = \exp(y \ln x)$。
 </p>
 <p>
-    <b>定理5.21：自然指数函数幂级数展开</b> $\displaystyle e^x = \sum^\infty_{k = 0} \frac{x^k}{k!}$。
+    <b>定理5.22：自然指数函数幂级数展开</b> $\displaystyle e^x = \sum^\infty_{k = 0} \frac{x^k}{k!}$。
 </p>
 <p>
-    <b>定义5.22：反常积分</b> 假设$f$在所有$c \in (a,b)$黎曼可积，并且$\displaystyle \lim_{c \to b^-} \int^c_a f$存在，那么定义反常积分$\displaystyle \int^b_a f = \lim_{c \to b^-} \int^c_a f$。
+    <b>定义5.23：反常积分</b> 假设$f$在所有$c \in (a,b)$黎曼可积，并且$\displaystyle \lim_{c \to b^-} \int^c_a f$存在，那么定义反常积分$\displaystyle \int^b_a f = \lim_{c \to b^-} \int^c_a f$。
 </p>
 <p>
-    <b>定理5.23：反常积分的p级数审敛法</b> 
+    <b>定理5.24：反常积分的p级数审敛法</b> 
 </p>
 <ol>
     <li>
@@ -388,7 +388,7 @@ math: true
     </li>
 </ol>
 <p>
-    <b style="color: red;">定理5.24：积分比较审敛法</b> 若$f: [a,\infty) \to \R, g : [a, \infty) \to \R$，并且对于任意的$x$，都有$|f(x)| \le g(x)$，那么
+    <b style="color: red;">定理5.25：积分比较审敛法</b> 若$f: [a,\infty) \to \R, g : [a, \infty) \to \R$，并且对于任意的$x$，都有$|f(x)| \le g(x)$，那么
 </p>
 <ol>
     <li>
@@ -399,12 +399,12 @@ math: true
     </li>
 </ol>
 <p>
-    <b>定理5.25：级数的积分审敛法</b> 假设$f: [k, +\infty) \to \R$非负并且单调递减。那么，$\displaystyle \sum_{n \ge k} f(n)$收敛的充要条件是$\displaystyle \int^\infty_k f$收敛，并且如果$\displaystyle \int^\infty_k f \le \infty$，有$\displaystyle \int^\infty_k f \le \sum_{n \ge k} f(n) \le f(k) + \int^\infty_k f$。
+    <b>定理5.26：级数的积分审敛法</b> 假设$f: [k, +\infty) \to \R$非负并且单调递减。那么，$\displaystyle \sum_{n \ge k} f(n)$收敛的充要条件是$\displaystyle \int^\infty_k f$收敛，并且如果$\displaystyle \int^\infty_k f \le \infty$，有$\displaystyle \int^\infty_k f \le \sum_{n \ge k} f(n) \le f(k) + \int^\infty_k f$。
 </p>
 <br><br>
 <hr>
 
-### 6 函数列
+### 函数列
 <p>
     <b>定义6.1：点收敛</b> 假设有函数列${f_n}_{n \ge 1} : S \to \R$。如果对于$f: S \to \R$，有对任意的$x \in S$，$\displaystyle \lim_{n \to \infty} f_n(x) = f(x)$，那么称$f_n$点收敛于$f$。
 </p>
@@ -455,7 +455,7 @@ math: true
 <br><br>
 <hr>
 
-### 7 度量空间
+### 度量空间
 <p>
     <b>定义7.1：</b> 定义度量空间$(X,d)$，其中$X$是集合，映射$d: X \times X \to [0, +\infty)$称作度量，并且满足
 </p>
@@ -471,7 +471,7 @@ math: true
     </li>
 </ol>
 <p>
-    <b style="color: red;">定理7.2：柯西施瓦茨不等式</b> 假设向量$\b a, \b b \in \R^n$，那么$\b a \cdot \b b \le \|\b a\| \|\b b\|$。
+    <b style="color: red;">定理7.2：柯西施瓦茨不等式</b> 假设向量$\boldsymbol a, \boldsymbol b \in \R^n$，那么$\boldsymbol a \cdot \boldsymbol b \le \|\boldsymbol a\| \|\boldsymbol b\|$。
 </p>
 <p>
     <b>定义7.3：有界性</b> 非空度量空间$S \subset (X,d)$有界的定义是存在$p \in X$和$M \gt 0$使得对任意的$x \in S$，都有$d(p, x) \le M$。定义半径$\text{diam}(S) = \sup \{d(x,y): x,y \in S\}$。
