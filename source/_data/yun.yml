@@ -39,6 +39,8 @@ banner:
     enable: true
     icon: icon-arrow-down-s-line
 
+favicon: /favicon.png
+
 # notice:
 #   enable: true
 #   content: Thanks for playing my game.
