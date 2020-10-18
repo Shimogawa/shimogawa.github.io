@@ -118,6 +118,7 @@ hr {
   --hty-text-color: #333;
   --hty-secondary-text-color: #555;
   --post-block-bg-color: #fff;
+  --smc-link-color: #0078e7;
 }
 html {
   scroll-behavior: smooth;
@@ -1411,6 +1412,7 @@ pre[class*='language-']:hover .copy-btn {
   font-weight: 400;
   font-family: 'Source Sans Pro', Roboto, Arial, 'Noto Serif SC', 'Microsoft YaHei', sans-serif;
 }
+.markdown-body code,
 .markdown-body pre {
   font-family: 'Fira Mono', 'Source Code Pro', 'Courier New', Courier, Consolas, Monaco, monospace;
 }
