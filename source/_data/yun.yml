@@ -1,12 +1,12 @@
 head:
   css:
-    fonts: https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&family=Fira+Mono&family=Source+Sans+Pro&display=swap
+    fonts: https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&family=Fira+Mono:wght@500&family=Source+Sans+Pro&display=swap
 
 font:
   cdn:
     enable: true
     lib:
-      - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&family=Fira+Mono&family=Source+Sans+Pro&display=swap
+      - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&family=Fira+Mono:wght@500&family=Source+Sans+Pro&display=swap
   serif:
     family: "'Songti SC', 'Noto Serif SC', STZhongsong, STKaiti, KaiTi, Roboto, serif"
     weight: 900
@@ -15,6 +15,7 @@ font:
     weight: 400
   monospace:
     family: "'Fira Mono', 'Source Code Pro', 'Courier New', Courier, Consolas, Monaco, monospace"
+    weight: 500
 
 avatar:
   enable: true
