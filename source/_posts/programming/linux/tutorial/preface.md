@@ -31,7 +31,7 @@ I decided to write an introduction to the GNU/Linux based operating systems (I w
 
 I think here I should tell you a little bit about Linux. If you only talk about plain Linux, it is a **kernel**, rather an OS. The GNU project made tools around the Kernel. And...
 
-> So it happened that at the same time there was a project for a kernel without tools (Linux), and a project with all the tools but without a kernel (GNU). As both were written with the same UNIX mindset it was possible to combine them into a full operating system which people aptly called "GNU/Linux". <sup>[1](#references)</sup>
+> So it happened that at the same time there was a project for a kernel without tools (Linux), and a project with all the tools but without a kernel (GNU). As both were written with the same UNIX mindset it was possible to combine them into a full operating system which people aptly called "GNU/Linux". <sup>[1](#References)</sup>
 
 I won't talk so much about what exactly is Linux or who made Linux (sorry Linux Torvalds) because my aim is not here. You really should check out the [Wikipedia page][linux_kernel_wiki] if you are really interested. Instead, I would like to introduce you the GNU/Linux, on Ubuntu, with its command-line interface and command-line tools _from the perspective of I/O_. (However I/O is much too important for me to tell you about the whole thing in this short intro.)
 
@@ -49,7 +49,7 @@ Enjoy!
 
 If you have anything to supplement or you find any error, just make issues and pull requests in my [repo][repo], comment below, or contact me via `admin@rebuild.moe`!
 
-### References
+## References
 
 1. [Why do people call Linux a kernel rather than an OS?](https://unix.stackexchange.com/questions/94402/why-do-people-call-linux-a-kernel-rather-than-an-os)
 
