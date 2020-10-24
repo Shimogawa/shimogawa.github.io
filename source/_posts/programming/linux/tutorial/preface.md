@@ -42,12 +42,12 @@ Enjoy!
 ## Index
 
 - [**1 Intro**](/programming/linux/tutorial/1-intro)
-<!-- - [**2 Files**](pages/2-files.md) -->
+- [**2 Files**](/programming/linux/tutorial/2-files)
 <!-- - [Appendix: Shell Commands](pages/commands.md) -->
 
 ## Contributions
 
-If you have anything to supplement or you find any error, just make issues and pull requests in my [repo][repo], comment below, or contact me via `admin@rebuild.moe`!
+If you have anything to supplement or you find any error, just comment below the web page, or contact me via `admin@rebuild.moe`!
 
 ## References
 

@@ -142,9 +142,8 @@ comment:
   tips:
     # - 暂时关闭了评论系统。
     # - Comment temporarily closed.
-    - 若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。
-    - 若没有本文 Issue，您可以使用 Comment 模版新建。
-    - 如果不想登录 GitHub，请使用 Valine
+    - 在下方选择方式留言评论。
+    - Comment below with different methods!
   candidates:
     - valine
     - utterances
