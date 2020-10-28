@@ -7,7 +7,7 @@ tags:
 - Math
 - Analysis
 language: zh-CN
-math: true
+katex: true
 ---
 
 <div style="display: none;">$\gdef\Q{\mathbb{Q}}$</div>
@@ -406,25 +406,25 @@ math: true
 
 ### 函数列
 <p>
-    <b>定义6.1：点收敛</b> 假设有函数列${f_n}_{n \ge 1} : S \to \R$。如果对于$f: S \to \R$，有对任意的$x \in S$，$\displaystyle \lim_{n \to \infty} f_n(x) = f(x)$，那么称$f_n$点收敛于$f$。
+    <b>定义6.1：点收敛</b> 假设有函数列$\{f_n\}_{n \ge 1} : S \to \R$。如果对于$f: S \to \R$，有对任意的$x \in S$，$\displaystyle \lim_{n \to \infty} f_n(x) = f(x)$，那么称$\{f_n\}$点收敛于$f$。
 </p>
 <p>
-    <b>定义6.2：一致收敛</b> 函数列$f_n$一致收敛于$f$，如果对于任意的$\varepsilon > 0$，都存在$N \in \N$，使得对任意的$n \ge N$和$x \in S$，有$|f_n(x) - f(x)| \lt \varepsilon$。
+    <b>定义6.2：一致收敛</b> 函数列$\{f_n\}$一致收敛于$f$，如果对于任意的$\varepsilon > 0$，都存在$N \in \N$，使得对任意的$n \ge N$和$x \in S$，有$|f_n(x) - f(x)| \lt \varepsilon$。
 </p>
 <p>
     <b>定义6.3：一致范数</b> 假设$f: S \to \R$有界，定义$f$在$S$上的一致范数为$\displaystyle \|f\|_u = \|f\|_{L^\infty(S)} = \sup_{x \in S} |f(x)|$。
 </p>
 <p>
-    <b style="color: red;">定理6.4：一致收敛</b> 函数列$f_n$一致收敛于$f$的充要条件是$\displaystyle \lim_{n \to \infty} \|f_n - f\|_u = 0$。
+    <b style="color: red;">定理6.4：一致收敛</b> 函数列$\{f_n\}$一致收敛于$f$的充要条件是$\displaystyle \lim_{n \to \infty} \|f_n - f\|_u = 0$。
 </p>
 <p>
     <b>性质6.5：</b> $\|f+g\|_u \le \|f\|_u + \|g\|_u$。
 </p>
 <p>
-    <b>推论6.6：</b> 如果$f_n$在$S$上一致收敛于$f$，那么$f_n$在$S$上点收敛于$f$。
+    <b>推论6.6：</b> 如果$\{f_n\}$在$S$上一致收敛于$f$，那么$f_n$在$S$上点收敛于$f$。
 </p>
 <p>
-    <b>定义6.7：一致柯西收敛</b> 如果有界函数列$f_n: S \to \R$有$\forall \varepsilon \gt 0, \exists N$使得对任意的$n, m \ge N$，$\|f_n - f_m\|_u \lt \varepsilon$，那么称$f_n$在$S$上一致柯西收敛。
+    <b>定义6.7：一致柯西收敛</b> 如果有界函数列$f_n: S \to \R$有$\forall \varepsilon \gt 0, \exists N$使得对任意的$n, m \ge N$，$\|f_n - f_m\|_u \lt \varepsilon$，那么称$\{f_n\}$在$S$上一致柯西收敛。
 </p>
 <p>
     <b>推论6.8：</b> 函数列一致柯西收敛的充要条件是函数列一致收敛。
