@@ -159,4 +159,4 @@ The final part `[perms...]` is the permission part. You can use the abbreviation
 2. See [1].
 
 <hr>
-<h6 align="right"><a href="#">Next</a> | <a href="/programming/linux/tutorial/preface">Home</a></h6>
+<h6 align="right"><a href="/programming/linux/tutorial/3-io">Next</a> | <a href="/programming/linux/tutorial/preface">Home</a></h6>

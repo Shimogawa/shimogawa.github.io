@@ -43,7 +43,7 @@ Enjoy!
 
 - [**1 Intro**](/programming/linux/tutorial/1-intro)
 - [**2 Files**](/programming/linux/tutorial/2-files)
-<!-- - [Appendix: Shell Commands](pages/commands.md) -->
+- [Appendix A: Shell Commands](/programming/linux/tutorial/commands)
 
 ## Contributions
 

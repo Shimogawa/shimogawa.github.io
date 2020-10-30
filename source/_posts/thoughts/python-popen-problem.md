@@ -1,6 +1,6 @@
 ---
 title: A Python Popen Problem
-date: 2020-10-16 22:08:44
+date: 2020-10-27 22:08:44
 categories:
   - Programming
 tags:
