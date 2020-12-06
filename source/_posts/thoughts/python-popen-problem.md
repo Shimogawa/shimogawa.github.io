@@ -48,7 +48,7 @@ import subprocess
 
 block_size = 65536
 
-proc = subprocess.Popen(["bash", "-c", f"dd if=/dev/urandom bs={} count=1 2>/dev/null"],
+proc = subprocess.Popen(["bash", "-c", f"dd if=/dev/urandom bs={block_size} count=1 2>/dev/null"],
                         stdout=subprocess.PIPE,
                         stderr=subprocess.STDOUT)
 proc.wait()
