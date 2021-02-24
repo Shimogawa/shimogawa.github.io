@@ -7,7 +7,7 @@ girls:
   - name: <ruby>蛇崩<rp>(</rp><rt>じゃくずれ</rt><rp>)</rp>乃音<rp>(</rp><rt>ののん</rt><rp>)</rp></ruby>
     avatar: /images/avatar.jpg
     from: KILL la KILL
-    # url: 人物百科链接
+    url: https://zh.moegirl.org.cn/%E8%9B%87%E5%B4%A9%E4%B9%83%E9%9F%B3
     reason: かっこいいから彼女になりたい
 ---
 
