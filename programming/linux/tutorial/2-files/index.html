@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="Rebuild"><meta name="copyright" content="Rebuild"><meta name="generator" content="Hexo 5.4.1"><meta name="theme" content="hexo-theme-yun"><title>GNU/Linux Introduction Chapter 2 | Rebuild's Album</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&amp;family=Fira+Mono:wght@500&amp;family=Source+Sans+Pro&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.2.4/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js"></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/png" href="/favicon.png"><link rel="mask-icon" href="/favicon.png" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"www.rebuild.moe","root":"/","title":"暁の花、咲きけり","version":"1.8.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"検索...","empty":"${query} が見つかりませんでした.","hits":"${hits} 件見つかりました","hits_time":"${hits} 件見つかりました, ${time} ミリ秒"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"local_search":{"path":"/search.xml"},"fireworks":{"colors":null},"vendors":{"darken":"https://cdn.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&amp;family=Fira+Mono:wght@500&amp;family=Source+Sans+Pro&amp;display=swap"><meta name="description" content="Chapter 2: Files   File FormatsWell I have to say that there is actually no such things called “format” for Linux. For Linux, it’s all about if it can be executed or not. Life is easier for Windo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GNU&#x2F;Linux Introduction Chapter 2">
+<meta property="og:url" content="https://www.rebuild.moe/programming/linux/tutorial/2-files/index.html">
+<meta property="og:site_name" content="Rebuild&#39;s Album">
+<meta property="og:description" content="Chapter 2: Files   File FormatsWell I have to say that there is actually no such things called “format” for Linux. For Linux, it’s all about if it can be executed or not. Life is easier for Windo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-12T01:41:39.178Z">
+<meta property="article:modified_time" content="2022-03-12T01:41:39.179Z">
+<meta property="article:author" content="Rebuild">
+<meta property="article:tag" content="Programming">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary"><script>(function() {
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="見出し"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="概要"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Rebuild"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="Rebuild"><span class="site-author-status" title="哭哭">🥺</span></a><div class="site-author-name"><a href="/about/">Rebuild</a></div><a class="site-name" href="/about/site.html">Rebuild's Album</a><sub class="site-subtitle">With love of Darkness and Fire</sub><div class="site-desciption">The combination of cuteness and evil</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="ホーム"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="アーカイブ"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">14</span></a></div><div class="site-state-item"><a href="/categories/" title="カテゴリ"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">10</span></a></div><div class="site-state-item"><a href="/tags/" title="タグ"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">16</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://git.rebuild.moe" title="Neko Git"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-external-link-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=714026292&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/Shimogawa" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:admin@rebuild.moe" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=267787075" title="NetEase Cloud Music" target="_blank" style="color:#C10D0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/2059527" title="Bilibili" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/nanomikairete" title="Twitter" target="_blank" style="color:#1da1f2"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="Boys (maybe girls) Next Door" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a><a class="links-item hty-icon-button" href="/girls/" title="可爱的女孩子" style="color:pink"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-women-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#File-Formats"><span class="toc-number">1.</span> <span class="toc-text">File Formats</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#File-Permission"><span class="toc-number">2.</span> <span class="toc-text">File Permission</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#File-Permissions"><span class="toc-number">2.1.</span> <span class="toc-text">File Permissions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Directory-Permissions"><span class="toc-number">2.2.</span> <span class="toc-text">Directory Permissions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Octet-Representation"><span class="toc-number">2.3.</span> <span class="toc-text">Octet Representation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Changing-File-Permission"><span class="toc-number">3.</span> <span class="toc-text">Changing File Permission</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Notes-and-References"><span class="toc-number">4.</span> <span class="toc-text">Notes and References</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://www.rebuild.moe/programming/linux/tutorial/2-files/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Rebuild"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Rebuild's Album"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">GNU/Linux Introduction Chapter 2</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="作成日：2022-03-12 09:41:39" itemprop="dateCreated datePublished" datetime="2022-03-12T09:41:39+08:00">2022-03-12</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/Programming/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">Programming</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/Programming/Linux/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">Linux</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/Programming/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Programming</span></a><a class="tag-item" href="/tags/Linux/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Linux</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><div align="center" style="font-size: 33px"><b>
+    Chapter 2: Files
+</b></div>
+
+<h2 id="File-Formats"><a href="#File-Formats" class="headerlink" title="File Formats"></a>File Formats</h2><p>Well I have to say that there is actually no such things called “format” for Linux. For Linux, it’s all about if it can be executed or not. Life is easier for Windows, as most executables in Linux have no file extension.</p>
+<p>You <strong>are</strong> able to execute any file in Linux, and the OS will decide if it is executable or not. In Linux, the most common executable file format is the Executable and Linkable Format, <strong>ELF</strong>. Let’s take the hexdump of <code>gcc</code> for example.</p>
+<pre class="line-numbers language-none"><code class="language-none">  Offset: 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 	
+00000000: 7F 45 4C 46 02 01 01 00 00 00 00 00 00 00 00 00    .ELF............
+00000010: 02 00 3E 00 01 00 00 00 60 6F 40 00 00 00 00 00    ..&gt;.....&#96;o@.....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>The first 16 bytes are the magic header of ELF executables, and you can see the <code>ELF</code> ASCII characters from bytes 1 to 3. The OS will use the Magic to identify if it is an executable or not. Also, text files are executable. They can be used to execute shell commands, and we will talk about that later.</p>
+<p>Anyways, to execute a file, you have to change the permission of the file first, and we have to know what file permissions are, and what the hell does <code>ls -la</code> really tell us.</p>
+<h2 id="File-Permission"><a href="#File-Permission" class="headerlink" title="File Permission"></a>File Permission</h2><p>Remember the output from <code>ls -la</code>? If not, just run the same command again. Your output will be similar to something like</p>
+<pre class="line-numbers language-none"><code class="language-none">total 12
+drwxr-xr-x  3 root    root    4096 Aug  4 21:23 .
+drwxr-xr-x 20 root    root    4096 Aug  5 20:08 ..
+drwxr-xr-x 21 rebuild rebuild 4096 Sep 25 20:15 rebuild<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Forget about the first line <code>total 12</code> for now. It is related to some OS knowledge on the file system. Now, we shall really focus on understanding the other lines describing the details for those files and directories. It is really easy to understand the last 4 columns representing month, day, time of modification, and the name of that file. The 5<sup>th</sup> column represents the size of the file, in bytes. Here, each directory is a file that takes up 4 KiB of the disk (or memory) space.</p>
+<blockquote>
+<p>Note: I add “memory” because directories such as <code>.</code> and <code>..</code> may not really exist on disk. They might be put in memory and used by OS directly from memory. The size of a directory will always be 4 KiB because the file representing a directory contains metadata about the files in that directory (inodes and file names). The smallest size for a block in the disk is 4 KiB, so directories will take up 4 KiB initially. However, if there are too much contents in that directory, the size of the directory file will grow large. I created a directory with 10,000 files inside using <code>touch &#123;1..10000&#125;</code>, and that directory is of size 155648 bytes, or 152 KiB. That is exactly 38 blocks.</p>
+</blockquote>
+<p>Now let’s check the first column, that is, the <strong>permissions</strong> of the file. It is represented here in <code>ls</code> by the 10 characters, e.g. <code>drwxr-xr-x</code>. When we want to understand this, we have to seperate it into 1-3-3-3, that is, <code>d rwx r-x r-x</code>.</p>
+<p>The first character, <code>d</code>, indicates that this file is a directory. Other valid options are</p>
+<ul>
+<li><code>-</code>, meaning a regular file</li>
+<li><code>l</code>, meaning a <strong>symbolic link</strong></li>
+<li><code>c</code>, meaning <strong>character device</strong></li>
+<li>Others we don’t care about for now<sup><a href="#Notes-and-References">1</a></sup>.</li>
+</ul>
+<p>Well that’s easy. Now come tricky stuffs. The <strong>real</strong> permissions for files and directories. </p>
+<h3 id="File-Permissions"><a href="#File-Permissions" class="headerlink" title="File Permissions"></a>File Permissions</h3><p>The permissions of a file are represented in <code>ls</code> by the latter 3 groups consisting of 3 characters, such as <code>rwx</code>. They are indicative of <strong>read</strong>, <strong>write</strong>, and <strong>execute</strong> permissions, respectively. If the character is <code>-</code>, it means that the specific permission is denied. And for the meaning of the 3 groups, see the table below.</p>
+<table style="table-layout: fixed;">
+    <thead>
+        <tr>
+            <th colspan=3><div align="center">File's owner<div></th>
+            <th colspan=3><div align="center">Other people in file's group<div></th>
+            <th colspan=3><div align="center">Anyone else<div></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">r</td>
+            <td align="center">w</td>
+            <td align="center">x</td>
+            <td align="center">r</td>
+            <td align="center">w</td>
+            <td align="center">x</td>
+            <td align="center">r</td>
+            <td align="center">w</td>
+            <td align="center">x</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Usually, a file’s owner is in the file’s group. The two information can be seen from the 3<sup>rd</sup> and 4<sup>th</sup> column of the output of <code>ls -l</code>. </p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>r</code></td>
+<td>Read file</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>Write to file</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>Execute file</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>No permission</td>
+</tr>
+</tbody></table>
+<p>Note that the <code>root</code> user in Linux has the highest privilege, so <code>root</code> can execute any command and do whatever it want on any files regardless of the file permission.</p>
+<h3 id="Directory-Permissions"><a href="#Directory-Permissions" class="headerlink" title="Directory Permissions"></a>Directory Permissions</h3><p>Similar to file permissions, the latter 3 groups for directory permissions also consists of <code>rwx</code>, and the first character in <code>ls -l</code> will always be <code>d</code>. However, here the meaning is slightly different.</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>r</code></td>
+<td>Read directory content using e.g. <code>ls</code></td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>Make changes on directory, e.g., creating, moving, deleting</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>Go into directory using <code>cd</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>No permission</td>
+</tr>
+</tbody></table>
+<p>There are, though, other permission types. For the “anyone else” group, there is the sticky bit, <code>T</code> and <code>t</code>. Also there are the <code>setuid</code> and <code>setgid</code> bit, <code>S</code> and <code>s</code>. I will not talk about them here.<sup><a href="#Notes-and-References">2</a></sup></p>
+<h3 id="Octet-Representation"><a href="#Octet-Representation" class="headerlink" title="Octet Representation"></a>Octet Representation</h3><p>Here we can see that regular file permissions can be represented by 9 flags in 3 groups. Therefore, for each group, we can let the flags be bit flags and form a octet. For example, <code>rwx</code> will be <code>0b111</code> in binary and thus <code>7</code> for this octet; <code>r--</code> will be <code>4</code>, and <code>---</code> will be <code>0</code>. Therefore, combining 3 groups together, we will have 3 octets, and we will use this to change the file permission later. The <code>d</code> character representing if the file is a directory is ignored here because it is more of a “property”, not “permission”, of a file.</p>
+<p>Some examples:</p>
+<pre class="line-numbers language-none"><code class="language-none">drwxrwxr-x  -&gt;  775
+-rwxr-xr-x  -&gt;  755 (most common)
+-r--r--r--  -&gt;  444
+-rwx--x---  -&gt;  710<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Changing-File-Permission"><a href="#Changing-File-Permission" class="headerlink" title="Changing File Permission"></a>Changing File Permission</h2><p>Ignoring the special permissions that we will not cover, only you and <code>root</code> (admins) can change the permission of files owned by you. We need the <code>chmod</code> command, standing for <strong>ch</strong>ange <strong>mod</strong>e, to change the permission of a file.</p>
+<p>First let’s use the octet representation to change the permission. We use the command <code>chmod &lt;permission&gt; &lt;file&gt;</code>. For example, to give full permission to a file, we use <code>chmod 777 &lt;file&gt;</code>. </p>
+<pre class="line-numbers language-none"><code class="language-none">$ ls -la a.py                               # ~&#x2F;test
+-rw-r--r-- 1 me   me   63 Sep 22 13:18 a.py
+$ chmod 777 a.py                            # ~&#x2F;test
+$ ls -la a.py                               # ~&#x2F;test
+-rwxrwxrwx 1 me   me   63 Sep 22 13:18 a.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Always, you can set the file permission as you want using this way. </p>
+<p>Another way to set permission using <code>chmod</code> is when you want to easily add or delete a permission. We will use this format of the command: <code>chmod [ugoa...][+-=][perms...] &lt;file&gt;</code>, which is called a symbolic format. First, let’s look at the <code>[ugoa]</code> part. It controls which groups of permission are to be changed.</p>
+<ul>
+<li><code>u</code> stands for the first group, which is the current user.</li>
+<li><code>g</code> stands for the second group, which is other users in the file’s group.</li>
+<li><code>o</code> stands for the third group, which is anyone else.</li>
+<li><code>a</code> stands for all three groups.</li>
+</ul>
+<p>Then, the <code>[+-=]</code> part.</p>
+<ul>
+<li><code>+</code> is for adding permissions.</li>
+<li><code>=</code> is for setting permissions.</li>
+<li><code>-</code> is for removing permissions.</li>
+</ul>
+<p>The final part <code>[perms...]</code> is the permission part. You can use the abbreviation <code>rwx</code>, and one or more can be applied. For example,</p>
+<ul>
+<li><code>a+x</code> means adding execute permission to everyone</li>
+<li><code>o-r</code> means removing read permission of people outside the file’s group.</li>
+<li><code>ugo+rwx</code> is the same as <code>a+rwx</code>, or <code>777</code>, which is giving all permissions.</li>
+</ul>
+<h2 id="Notes-and-References"><a href="#Notes-and-References" class="headerlink" title="Notes and References"></a>Notes and References</h2><ol>
+<li>If you want to know more, you can execute <code>info coreutils ls &quot;what information&quot;</code> and refer to the documentation.</li>
+<li>See [1].</li>
+</ol>
+<hr>
+<h6 align="right"><a href="/programming/linux/tutorial/3-io">Next</a> | <a href="/programming/linux/tutorial/preface">Home</a></h6></div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>著者：</strong>Rebuild</li><li class="post-copyright-link"><strong>記事へのリンク：</strong><a href="https://www.rebuild.moe/programming/linux/tutorial/2-files/" title="GNU/Linux Introduction Chapter 2">https://www.rebuild.moe/programming/linux/tutorial/2-files/</a></li><li class="post-copyright-license"><strong>著作権表示：</strong>このブログ内のすべての記事は、特別な記載がない限り <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> の下のライセンスで保護されています。</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/math/analysis-cheatsheet/" rel="prev" title="数学分析作弊纸"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">数学分析作弊纸</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/programming/linux/tutorial/1-intro/" rel="next" title="GNU/Linux Introduction Chapter 1"><span class="post-nav-text">GNU/Linux Introduction Chapter 1</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>在下方选择方式留言评论。</span><br><span>Comment below with different methods!</span><br><a class="hty-button hty-button--raised" id="github-issues" target="_blank" rel="noopener" href="https://github.com/Shimogawa/shimogawa.github.io/issues?q=is:issue+GNU/Linux Introduction Chapter 2">GitHub Issues</a></div><div class="toggle-comment-system" style="margin: 1rem auto"><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target="#valine-container" onclick="showComment(this.dataset.target)">valine</a><style>.utterances {
+  display: none;
+}</style><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target=".utterances" onclick="showComment(this.dataset.target)">utterances</a><script>function hideAllComment() {
+  //- hide all
+  document.querySelectorAll('.toggle-comment-btn').forEach((btn) => {
+    const container = document.querySelector(btn.dataset.target);
+    if (container) {
+      container.style.display = "none";
+    }
+  });
+}
+function showComment(target) {
+  hideAllComment();
+  //- show target
+  const targetContainer = document.querySelector(target);
+  if (targetContainer) {
+    targetContainer.style.display = "block";
+  }
+}
+</script></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
+  const valineConfig = {"enable":true,"appId":"yhOSuPGGylx1z2fQesIekFsm-MdYXbMMI","appKey":"Qcvy0HlcSpaIiHVOqM1VO9tj","placeholder":"Your comment goes here...","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":true,"enableQQ":true,"meta":["nick","mail","link"],"lang":"en-us","requiredFields":["nick","mail"],"emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"},"el":"#valine-container"}
+  valineConfig.path = "/programming/linux/tutorial/2-files/"
+  new Valine(valineConfig)
+}, window.Valine);</script><style>.utterances {
+  max-width: 100%;
+}</style><script src="https://utteranc.es/client.js" repo="Shimogawa/shimogawa.github.io" issue-term="pathname" label="utter" theme="github-light" crossorigin="anonymous" async></script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> Rebuild</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v5.4.1</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.8.11</span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="検索"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="/js/search/local-search.js" defer type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-close-line"></use></svg></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="検索..." value=""></div><div id="local-search-result"></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></div></body></html>

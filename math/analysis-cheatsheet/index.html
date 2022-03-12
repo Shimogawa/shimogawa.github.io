@@ -1,0 +1,650 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="Rebuild"><meta name="copyright" content="Rebuild"><meta name="generator" content="Hexo 5.4.1"><meta name="theme" content="hexo-theme-yun"><title>数学分析作弊纸 | Rebuild's Album</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&amp;family=Fira+Mono:wght@500&amp;family=Source+Sans+Pro&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.2.4/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js"></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  Yun.utils.renderKatex();
+});</script><link rel="icon" type="image/png" href="/favicon.png"><link rel="mask-icon" href="/favicon.png" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"www.rebuild.moe","root":"/","title":"暁の花、咲きけり","version":"1.8.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"local_search":{"path":"/search.xml"},"fireworks":{"colors":null},"vendors":{"darken":"https://cdn.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&amp;family=Fira+Mono:wght@500&amp;family=Source+Sans+Pro&amp;display=swap"><meta name="description" content="$\gdef\Q{\mathbb{Q}}$  实数     公理1.1： $\N$是良序的，对于所有$\N$的非空子集$A$，$A$中必有最小元素。       定理1.2：数学归纳法 若$P(n)$是一系列命题，如果$P(1)$是真命题，并且如果$P(m)$是真命题能推导出$P(m+1)$是真命题，那么对所有的$n \in \N$，$P(n)$是真命题。       定理1.3：如果$A$和$B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数学分析作弊纸">
+<meta property="og:url" content="https://www.rebuild.moe/math/analysis-cheatsheet/index.html">
+<meta property="og:site_name" content="Rebuild&#39;s Album">
+<meta property="og:description" content="$\gdef\Q{\mathbb{Q}}$  实数     公理1.1： $\N$是良序的，对于所有$\N$的非空子集$A$，$A$中必有最小元素。       定理1.2：数学归纳法 若$P(n)$是一系列命题，如果$P(1)$是真命题，并且如果$P(m)$是真命题能推导出$P(m+1)$是真命题，那么对所有的$n \in \N$，$P(n)$是真命题。       定理1.3：如果$A$和$B">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-12T01:41:39.178Z">
+<meta property="article:modified_time" content="2022-03-12T01:41:39.178Z">
+<meta property="article:author" content="Rebuild">
+<meta property="article:tag" content="Math">
+<meta property="article:tag" content="Analysis">
+<meta name="twitter:card" content="summary"><script>(function() {
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Rebuild"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="Rebuild"><span class="site-author-status" title="哭哭">🥺</span></a><div class="site-author-name"><a href="/about/">Rebuild</a></div><a class="site-name" href="/about/site.html">Rebuild's Album</a><sub class="site-subtitle">With love of Darkness and Fire</sub><div class="site-desciption">The combination of cuteness and evil</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="アーカイブ"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">14</span></a></div><div class="site-state-item"><a href="/categories/" title="カテゴリ"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">10</span></a></div><div class="site-state-item"><a href="/tags/" title="タグ"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">16</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://git.rebuild.moe" title="Neko Git"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-external-link-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=714026292&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/Shimogawa" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:admin@rebuild.moe" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=267787075" title="NetEase Cloud Music" target="_blank" style="color:#C10D0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/2059527" title="Bilibili" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/nanomikairete" title="Twitter" target="_blank" style="color:#1da1f2"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="Boys (maybe girls) Next Door" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a><a class="links-item hty-icon-button" href="/girls/" title="可爱的女孩子" style="color:pink"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-women-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">实数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%88%97"><span class="toc-number">2.</span> <span class="toc-text">数列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">连续函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">导数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%8E%E6%9B%BC%E7%A7%AF%E5%88%86"><span class="toc-number">5.</span> <span class="toc-text">黎曼积分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%88%97"><span class="toc-number">6.</span> <span class="toc-text">函数列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%A6%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-number">7.</span> <span class="toc-text">度量空间</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://www.rebuild.moe/math/analysis-cheatsheet/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Rebuild"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Rebuild's Album"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">数学分析作弊纸</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-03-12 09:41:39" itemprop="dateCreated datePublished" datetime="2022-03-12T09:41:39+08:00">2022-03-12</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/Math/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">Math</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/Math/Analysis/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">Analysis</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/Math/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Math</span></a><a class="tag-item" href="/tags/Analysis/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Analysis</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><div style="display: none;">$\gdef\Q{\mathbb{Q}}$</div>
+
+<h3 id="实数"><a href="#实数" class="headerlink" title="实数"></a>实数</h3><p>
+    <b>公理1.1：</b> $\N$是良序的，对于所有$\N$的非空子集$A$，$A$中必有最小元素。
+</p>
+<p>
+    <b>定理1.2：数学归纳法</b> 若$P(n)$是一系列命题，如果$P(1)$是真命题，并且如果$P(m)$是真命题能推导出$P(m+1)$是真命题，那么对所有的$n \in \N$，$P(n)$是真命题。
+</p>
+<p>
+    <b>定理1.3：</b>如果$A$和$B$是可数的，那么$A \times B$也是可数的。
+</p>
+<p>
+    <b>推论1.4：</b>$\Q$是可数的。
+</p>
+<p>
+    <b>定理1.5：（康托）</b>对于非空集$A$，$|A| &lt; |\mathcal{P}(A)|$，其中$\mathcal{P}(A)$是幂集。
+</p>
+<p>
+    <b style="color: red;">定理1.6：</b><b>确界原理</b> 如果$S$是有序集，那么对任意的非空子集$E \subset S$，如果$E$有上界，那么必有上确界，如果有下界，那么必有下确界。$\Q$不适用这个原理。
+</p>
+<p>
+    <b>定理1.7：</b>$\forall n \in \N, \forall x \in \R, x \ge 0, \exists ! y \ge 0$使得$y^n = x$。
+</p>
+<p>
+    <b style="color: red;">定理1.8：</b><b>阿基米德性质</b> $\forall x &gt; 0, y \in \R, \exists n \in \N$使得$nx > y$。
+</p>
+<p>
+    <b>推论1.9：稠密性</b> $\Q$在$\R$中稠密，即$\forall x &lt; y \in \R, \exists q \in \Q$使得$x &lt; q &lt; y$。
+</p>
+<p>
+    <b>定理1.10：</b>如果$S \subset \R$，并且$S$有上界，令$M = \sup S$，那么有$\forall \varepsilon > 0, \exists x \in S$使得$M - \varepsilon &lt; x &lt; M$。
+</p>
+<p>
+    <b>定理1.11：（三角不等式）</b>$|x+y| \le |x| + |y|$。$\big ||x|-|y| \big | \le |x-y|$。
+</p>
+<p>
+    <b>定理1.12：（康托）</b>$\R$是不可数的。
+</p>
+<br><br>
+<hr>
+
+<h3 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h3><p>
+    <b style="color: red;">定义2.1：</b><b>数列收敛</b> 数列$x_n$趋向于或收敛于$x$的定义为$\forall \varepsilon > 0, \exists N \in \N$使得$|x_n - x| &lt; \varepsilon, \forall n \ge N$。
+</p>
+<p>
+    <b>定理2.2：</b>收敛数列有界，并且有且仅有一个极限。
+</p>
+<p>
+    <b>技巧2.3：</b>要证明数列不收敛，找到两个子列$\{\overline{x_{n_k}}\}$和$\{\widetilde{x_{n_k}}\}$使得这两个数列收敛于不同极限。
+</p>
+<p>
+    <b>推论2.4：</b>$x_n \rightarrow x$的充要条件是任意子列$\{x_{n_k}\}$也都收敛于$x$。
+</p>
+<p>
+    <b style="color: red;">定理2.5：</b>单调有界数列必定收敛。如果单调递增，那么$x_n \rightarrow \sup \{x_n\}$；如果单调递减，那么$x_n \rightarrow \inf \{x_n\}$。
+</p>
+<p>
+    <b>推论2.6：</b>如果集合$S$有上界，那么存在收敛数列$\{x_n\} \subset S$，并且$x_n \rightarrow \sup S$。
+</p>
+<p>
+    <b>命题2.7：</b>假设$x_n \rightarrow x$，$y_n \rightarrow y$。如果$x_n \le y_n$，那么$x \le y$。
+</p>
+<p>
+    <b style="color: red;">引理2.8：</b><b>夹逼定理</b> 假设$\{x_n\},\{y_n\},\{z_n\}$满足$x_n \le z_n \le y_n$。如果$x_n \to L$，$y_n \to L$，那么$z_n$也收敛于$L$。
+</p>
+<p>
+    <b style="color: red;">定理2.9：</b><b>比较审敛法</b> 令$a_n \ge 0$并且$a_n \to 0$。如果$\{x_n\}$对于足够大的$n$有$|x_n - x| \le a_n$，那么$\{x_n\}$收敛于$x$。
+</p>
+<p>
+    <b>命题2.10：</b>如果$x_n$无界并且单调递增/递减，那么$x_n \to \infty$或$x_n \to -\infty$。
+</p>
+<p>
+    <b style="color: red;">定理2.11：</b><b>比值审敛法</b> 对数列$\{x_n\}$，如果
+</p>
+<ol>
+    <li>
+        $\displaystyle \lim_{n\to \infty} \frac{|x_{n+1}|}{|x_n|} &lt; 1$，那么$x_n \to 0$。
+    </li>
+    <li>
+        $\displaystyle \lim_{n\to \infty} \frac{|x_{n+1}|}{|x_n|} &gt; 1$，那么$x_n$发散。
+    </li>
+    <li>
+        $\displaystyle \lim_{n\to \infty} \frac{|x_{n+1}|}{|x_n|} = 1$，那么收敛性不确定。
+    </li>
+</ol>
+<p>
+    <b style="color: red;">定理2.12：</b><b>BW</b> 所有在$\R$中的有界数列都有收敛子列。
+</p>
+<p>
+    <b>定理2.13：</b>如果数列$\{x_n\}$收敛，那么存在子列$\{\overline{x}_{n_k}\}$使得$\displaystyle \lim_{n \to \infty} \overline{x}_{n_k} = \limsup_{n \to \infty} x_n$。同样，也存在子列$\{\widetilde{x}_{n_k}\}$使得$\displaystyle \lim_{n \to \infty} \widetilde{x}_{n_k} = \liminf_{n \to \infty} x_n$。
+</p>
+<p>
+    <b>推论2.14：</b>如果$\{x_n\}$有界，那么$\{x_n\}$收敛的充要条件是$\liminf x_n = \limsup x_n$。
+</p>
+<p>
+    <b style="color: red;">定义2.15：</b><b>柯西数列</b> $\{x_n\}$是柯西数列，如果$\forall \varepsilon > 0, \exists N \in \N$使得$\forall n \ge N$和$m \ge N$，有$|x_n - x_m| &lt; \varepsilon$。
+</p>
+<p>
+    <b>定理2.16：</b>所有$\R$上的柯西数列都收敛。
+</p>
+<p>
+    <b style="color: red;">定义2.17：</b><b>级数收敛</b> 级数$\Sigma x_n$收敛的充要条件是部分和$\displaystyle S_n = \sum_{k=1}^n x_k$是收敛数列。
+</p>
+<p>
+    <b>定理2.18：p级数</b> p级数$x_n = n^{-p}, p > 1$收敛。调和级数$\displaystyle \sum \frac{1}{n}$发散。
+</p>
+<p>
+    <b style="color: red;">定理2.19：</b>如果$\Sigma x_n$收敛，那么$|x_n| \to 0$。如果$|x_n| \not \to 0$，那么$\Sigma x_n$发散。
+</p>
+<p>
+    <b>定理2.20：</b>如果级数绝对收敛，那么级数收敛。
+</p>
+<p>
+    <b style="color: red;">定理2.21：</b><b>交错级数审敛法</b> 如果$x_n \ge 0$并且$x_n$单调递减，$x_n \to 0$，那么$\Sigma (-1)^n x_n$收敛。
+</p>
+<p>
+    <b style="color: red;">定理2.22：</b><b>级数比值审敛法</b> 如果$x_n$是非零数列并且极限$\displaystyle L = \lim_{n \to \infty} \frac{|x_{n+1}|}{|x_n|}$存在，那么如果$L &lt; 1$，那么级数绝对收敛；如果$L > 1$，级数发散。
+</p>
+<p>
+    <b style="color: red;">定理2.23：</b><b>级数开根审敛法</b> 假设极限$L = \limsup \sqrt[n]{|x_n|}$存在。那么如果$L &lt; 1$，级数$\Sigma x_n$绝对收敛；如果$L>1$，那么级数发散。
+</p>
+<p>
+    <b style="color: red;">定理2.24：</b><b>幂级数</b> 幂级数$\Sigma a_n (x-x_0)^n$有收敛半径$\displaystyle R = \frac{1}{\displaystyle \limsup_{n \to \infty} \sqrt[n]{|a_n|}}$。如果存在，那么当$|x - x_0| &lt; R$时，级数绝对收敛；如果$|x-x_0| > R$，那么级数发散。等于的情况需要另行讨论。
+</p>
+<p>
+    <b>定理2.25：级数极限比较审敛法</b> 如果有$a_n \gt 0, b_n \gt 0$并且$\displaystyle 0 \lt \lim_{n \to \infty} \frac{a_n}{b_n} \lt \infty$，那么$\Sigma a_n$和$\Sigma b_n$同时收敛或发散。
+</p>
+<br><br>
+<hr>
+
+<h3 id="连续函数"><a href="#连续函数" class="headerlink" title="连续函数"></a>连续函数</h3><p>
+    <b style="color: red;">定义3.1：</b><b>聚点</b> 设$S \subset \R$。$x \in \R$是$S$的一个聚点，如果$\forall \varepsilon > 0$，集合$(x-\varepsilon, x+\varepsilon) \cap S \backslash \{x\}$非空。
+</p>
+<p>
+    <b>定理3.2：</b>$x$是$S$的聚点的充要条件是$\exists \{x_n\} \subset S \backslash \{x\}$使得$\displaystyle \lim_{n \to \infty} x_n = x$。
+</p>
+<p>
+    <b style="color: red;">定义3.3：</b><b>函数极限</b> 设函数$f: S \to \R$。令$c \in \R$为$S$的一个聚点。如果有$\forall \varepsilon > 0, \exists \delta > 0$使得对所有的$|x-c| &lt; \delta, x \in S$都有$|f(x) - L| &lt; \varepsilon$，那么定义函数极限$\displaystyle L = \lim_{x \to c} f(x)$。注意，如果$L$存在，那么它唯一。
+</p>
+<p>
+    <b style="color: red;">定理3.4：</b>设$f:S \to \R$，$c$是$S$的一个聚点。那么$\displaystyle \lim_{x \to c} f(x) = L$的充要条件是$\forall \{x_n\} \subset S \backslash \{x\}$并且$x_n \to c$，都有$\displaystyle \lim_{n \to \infty} f(x_n) = L$。
+</p>
+<p>
+    <b>定理3.5：</b>函数极限存在的充要条件是双侧极限存在且相等。
+</p>
+<p>
+    <b style="color: red;">定义3.6：</b><b>连续性</b> 对于函数$f:S \to \R, c \in S$，如果有$\forall \varepsilon > 0, \exists \delta = \delta(\varepsilon, c) > 0$使得$\forall x \in S, |x - c| &lt; \delta$都有$|f(x) - f(c)| &lt; \varepsilon$，那么$f$在$c$连续。如果对所有$c \in S$，$f$都连续，那么我们说$f$在$S$上连续。
+</p>
+<p>
+    <b style="color: red;">定理3.7：</b>$f$在$c$连续的充要条件是$\forall x_n \to c, x_n \in S$，都有$f(x_n) \to f(c)$。
+</p>
+<p>
+    <b>推论3.8：</b>$f(x) = x^r, r \in \Q$是连续的。
+</p>
+<p>
+    <b>定理3.9：</b>若有$f: A \to B, g: B \to \R$，并且$f$在$c$连续，$g$在$f(c)$连续，那么复合函数$h = g \circ f : A \to \R$在$c$连续（$h(x) = g(f(x))$）。
+</p>
+<p>
+    <b style="color: red;">定理3.10：</b>如果存在数列$\{x_n\} \subset S$，$x_n \to c$但是$f(x_n) \not \to c$，那么$f$在$c$不连续。
+</p>
+<p>
+    <b style="color: red;">定理3.11：</b><b>最大最小值定理</b> 如果$f: [a,b] \to \R$是连续的，那么$f$有界，并且在$[a,b]$上有最大最小值。
+</p>
+<p>
+    <b style="color: red;">引理3.12：</b><b>零点定理</b> 如果$f: [a,b] \to \R$是连续的，并且$f(a) &lt; 0$，$f(b) > 0$，那么存在$c \in (a,b)$使得$f(c) = 0$。
+</p>
+<p>
+    <b style="color: red;">定理3.13：</b><b>介值定理，中间值定理</b> 如果$f:[a,b] \to \R$连续，并且存在$y$在$f(a)$和$f(b)$之间，那么存在$x_0 \in (a,b)$使得$f(x_0) = y$。
+</p>
+<p>
+    <b>推论3.14：</b>如果$f: [a,b] \to \R$是连续的，那么$f([a,b]) = [\inf f, \sup f]$。
+</p>
+<p>
+    <b>推论3.15：</b>所有奇数次多项式都有一个实根。
+</p>
+<p>
+    <b style="color: red;">定义3.16：</b><b>一致连续性</b> $f$在$S$上一致连续的定义是$\forall \varepsilon > 0, \exists \delta = \delta(\varepsilon) > 0$使得$\forall |x - y| &lt; \delta$都有$|f(x) - f(y)| &lt; \varepsilon$。
+</p>
+<p>
+    <b>定理3.17：</b>一致连续的函数是连续的。
+</p>
+<p>
+    <b>定理3.18：</b>如果$f:[a,b] \to \R$连续，那么$f$在$[a,b]$上一致连续。
+</p>
+<p>
+    <b>定理3.19：</b>如果$\{x_n\} \subset S$是柯西数列，并且$f$在$S$上一致连续，那么$\{f(x_n)\}$也是柯西数列。
+</p>
+<p>
+    <b>定理3.20：</b>一致连续性的推广略。（暂时）
+</p>
+<p>
+    <b style="color: red;">定义3.21：</b><b>利普希茨连续</b> 如果对于函数$f: S \to \R$，存在$M > 0$使得对于任意的$x,y \in S$，都有$|f(x) - f(y)| \le M |x-y|$，那么函数$f$是Lipschitz连续的。
+</p>
+<p>
+    <b>定理3.22：</b>Lipschitz连续函数是一致连续的。
+</p>
+<p>
+    <b style="color: red;">定义3.23：</b><b>单调性</b> 如果$f$满足$x \lt y \Rightarrow f(x) \le f(y)$，那么$f$是单调递增的。如果$f$满足$x \lt y \Rightarrow f(x) \ge f(y)$，那么$f$是单调递减的。严格递增递减是将等号去除的情况。
+</p>
+<p>
+    <b>定理3.24：</b>如果$I \subset \R$是一个区间，并且$f: I \to \R$是严格单调的，那么$f(I)$是一个区间的充要条件是$f$是连续的。
+</p>
+<p>
+    <b>定理3.25：</b>如果$f: I \to \R$是单调的，那么$f$有最多可数无穷个间断点（不连续点）。
+</p>
+<br><br>
+<hr>
+
+<h3 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h3><p>
+    <b style="color: red;">定义4.1：</b><b>导数</b> 若函数$f:I \to \R$，$c \in I$是一个聚点。如果极限$\displaystyle L = \lim_{x \to c} \frac{f(x) - f(c)}{x-c}$存在，那么我们称$f$在$c$可导，并且$L$叫做$f$在$c$的导数，记作$f'(c) = L$。
+</p>
+<p>
+    <b>定理4.2：</b>可导必连续。
+</p>
+<p>
+    <b>定理4.3：链式法则</b> 若$f:I_1 \to I_2$在$c \in I_1$可导，$g:I_2 \to \R$在$f(c) \in I_2$可导，那么$g \circ f: I_1 \to \R$在$c$可导，并且导数$(g \circ f)'(c) = g'(f(c)) \cdot f'(c)$。
+</p>
+<p>
+    <b>定理4.4：</b>如果函数$f: I \to \R$在$c$可导，并且在$c$有局部极值，那么$f'(c) = 0$。
+</p>
+<p>
+    <b>定义4.5：</b>驻点指导数为$0$的点。
+</p>
+<p>
+    <b>定理4.6：</b>假设$f: [a,b) \to \R$是连续的并且在$(a,b)$上可导。如果$\displaystyle \lim_{x \to a^+} f'(x)$存在并等于$L$，那么说$f$在$a$可导，并且$f'(a) = L$。
+</p>
+<p>
+    <b style="color: red;">定理4.7：</b><b>罗尔定理</b> 假设$f: [a,b] \to \R$是连续的，并且在$(a,b)$上可导。如果$f(a) = f(b)$，那么存在$c \in (a,b)$使得$f'(c) = 0$。
+</p>
+<p>
+    <b style="color: red;">定理4.8：</b><b>中值定理</b> 假设$f: [a,b] \to \R$是连续的，并且在$(a,b)$上可导，那么存在$c \in (a,b)$使得$\displaystyle f'(c) = \frac{f(b) - f(a)}{b-a}$，或$f(b) - f(a) = f'(c)(b-a)$。
+</p>
+<p>
+    <b>推论4.9：</b>如果$f'(x) = 0, \forall x$，那么$f$是常值函数。如果$f'(x) \ge 0$，那么$f$单调递增。反之亦然。
+</p>
+<p>
+    <b>定理4.10：一阶导数测试</b> 假设$f:(a,b) \to \R$在$(a,b) \backslash \{c\}, c \in (a,b)$上是连续并可导的。如果在$(a,c)$上$f'(x) \le 0$，并且在$(c,b)$上$f'(x) \ge 0$，那么$f$在$c$有最小值。反之亦然。
+</p>
+<p>
+    <b style="color: red;">定理4.11：</b><b>洛必达法则</b> 假设$f,g:(a,b) \to \R$是可导的，$c \in (a,b)$。如果$f(c) = g(c) = 0, g'(x) \ne 0$，并且极限$\displaystyle L = \lim_{x \to c} \frac{f'(x)}{g'(x)}$存在，那么$\displaystyle \lim_{x \to c} \frac{f(x)}{g(x)} = L$。
+</p>
+<p>
+    <b style="color: red;">定理4.12：</b><b>达布中值定理</b> 假设$f:[a,b] \to \R$是可导的。如果有$y$在$f'(a)$和$f'(b)$之间，那么存在$c \in (a,b)$使得$f'(c) = y$。
+</p>
+<p>
+    <b style="color: red;">定理4.13：</b><b>泰勒展开</b> 假设$f:[a,b] \to \R$是$n$阶连续可导的并且$n+1$阶导数存在。给定$x_0 \in [a,b]$，对任意$x \ne x_0 \in [a,b]$，存在$c \in (a,b)$在$x$与$x_0$之间，使得
+    \[f(x) = P_n^{x_0}(x) + R_n^{x_0}(x),\]
+    其中$\displaystyle P_n^{x_0}(x) = \sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!} (x-x_0)^k$称为泰勒多项式，$\displaystyle R_n^{x_0}(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-x_0)^{n+1}$称为拉格朗日余项。
+</p>
+<p>
+    <b>定理4.14：二阶导数测试</b> 假设$f$在$(a,b)$上有二阶连续导数，并且$x_0 \in (a,b)$是一个驻点，即$f'(x_0) = 0$。如果$f''(x_0) \gt 0$，那么$f$在$x_0$是局部最小值。反之亦然。
+</p>
+<br><br>
+<hr>
+
+<h3 id="黎曼积分"><a href="#黎曼积分" class="headerlink" title="黎曼积分"></a>黎曼积分</h3><p>
+    <b>定义5.1：划分</b> 如果有$a = x_0 \lt x_1 \lt ... \lt x_n = b$，那么称$P = \{x_0, x_1, ..., x_n\}$是在区间$[a,b]$上的一个划分，并且，记$\Delta x_i = x_i - x_{i-1}$。对于一个在这个划分上的函数$f(x)$，记$\displaystyle m_i = \inf_{[x_{i-1}, x_i]} f(x)$，$\displaystyle M_i = \sup_{[x_{i-1}, x_i]} f(x)$。
+</p>
+<p>
+    <b>定义5.2：上下达布和</b> 对于一个划分$P$，定义上达布和$\displaystyle U(P, f) = \sum_{i=1}^n M_i \Delta x_i$，和下达布和$\displaystyle L(P, f) = \sum_{i=1}^n m_i \Delta x_i$。
+</p>
+<p>
+    <b>定义5.3：上下积分</b> 设$P$为划分，定义上积分$\displaystyle \overline{\int^b_a} f = \inf_P U(P, f)$，下积分$\displaystyle \underline {\int^b_a} f = \sup_P L(P, f)$。
+</p>
+<p>
+    <b style="color: red;">定义5.4：</b><b>黎曼可积</b> 函数$f: [a,b] \to \R$是黎曼可积的，如果$f$有界并且$\displaystyle \overline {\int^b_a} f = \underline {\int^b_a} f = \int^b_a f$。我们称$\displaystyle \int^b_a f$为黎曼积分，并且记$\displaystyle \int^b_a f = \int^b_a f(x) dx$。如果$f$在$[a,b]$上黎曼可积，记作$f \in \mathscr{R} [a,b]$。
+</p>
+<p>
+    <b style="color: red;">定理5.5：</b> $f:[a,b] \to \R$是黎曼可积的充要条件是对于任意$\varepsilon > 0$，存在一个划分$P$使得$0 \le U(P, f) - L(P, f) \lt \varepsilon$。
+</p>
+<p>
+    <b>定义5.6：Refinement</b> 我们称$\widetilde P$是划分$P$的Refinement，如果$P \subset \widetilde P$。
+</p>
+<p>
+    <b>推论5.7：</b> 假设$P_1$和$P_2$是在$[a,b]$上的划分，那么$P = P_1 \cup P_2$是$P_1$和$P_2$的Refinement，并且有$L(P_1,f) \le L(P,f) \le U(P,f) \le U(P_2,f)$。
+</p>
+<p>
+    <b>命题5.8：</b> 如果$m \le M$，那么$m(b-a) \le L(P,f) \le U(P,f) \le M(b-a)$。
+</p>
+<p>
+    <b style="color: red;">定理5.9：</b> 如果$f:[a,b] \to \R$是连续的，那么它是黎曼可积的。
+</p>
+<p>
+    <b>推论5.10：</b> 假设$f$是连续的并且$f \ge 0$。如果$\int_a^b f = 0$，那么$f(x) = 0, \forall x$。
+</p>
+<p>
+    <b style="color: red;">定理5.11：</b> 如果$f:[a,b] \to \R$是单调的，那么$f$是黎曼可积的。
+</p>
+<p>
+    <b>定理5.12：</b> 假设$f:[a,b] \to \R$有界并且数列$a_n$单调递减，$a_n \to a$，数列$b_n$单调递增并且$b_n \to b$。如果对于所有的$n \in \N$，$f$在$[a_n, b_n]$是黎曼可积的，那么$f$在$[a,b]$上是黎曼可积的，并且$\displaystyle \int^b_a f = \lim_{n \to \infty} \int^{b_n}_{a_n} f$。
+</p>
+<p>
+    <b>定理5.13：</b> 如果$f$有界并且$f$有有限个间断点，那么$f$是黎曼可积的。
+</p>
+<p>
+    <b style="color: red;">定理5.14：微积分基本定理1 牛顿-莱布尼茨公式</b> 假设$F$在$[a,b]$上连续，并且在$(a,b)$上可导，令$f = F'$。如果$f \in \mathscr R[a,b]$，那么$\displaystyle \int^b_a f = F(b) - F(a)$。
+</p>
+<p>
+    <b style="color: red;">定理5.15：微积分基本定理2</b> 假设$f \in \mathscr R [a,b]$，并且$x \in [a,b]$。定义$\displaystyle F(x) = \int^x_a f$，那么$F$在$[a,b]$上连续。如果$f \in C^0[a,b]$（$C^n[a,b]$指$n$阶连续可导），那么$F$在$[a,b]$上可导，并且$F'(c) = f(c)$。
+</p>
+<p>
+    <b>定理5.16：换元法</b> 假设$g \in C^1[a,b]$，并且$g([a,b]) \subset [c,d]$，令$f \in C^0 [c,d]$，那么有$\displaystyle \int^b_a f(g(x)) g'(x) dx = \int^{g(b)}_{g(a)} f(s) ds$。
+</p>
+<p>
+    <b>定理5.17：自然对数函数</b> 存在唯一的函数$L: (0, +\infty) \to \R$，并且有以下性质：
+</p>
+<ol>
+    <li>
+        $L(1) = 0$；
+    </li>
+    <li>
+        $\displaystyle L'(x) = \frac{1}{x}$；
+    </li>
+    <li>
+        $L$是严格单调递增并且是双射，并且有$\displaystyle \lim_{x \to 0^+} L(x) = -\infty$，$\displaystyle \lim_{x \to \infty} L(x) = +\infty$；
+    </li>
+    <li>
+        $L(xy) = L(x) + L(y)$；
+    </li>
+    <li>
+        对于任意$q \in \Q$，有$L(x^q) = qL(x)$。
+    </li>
+</ol>
+<p>
+    函数$L$又能记作$\ln(x)$或$\log(x)$。
+</p>
+<p>
+    <b>定理5.18：自然对数函数幂级数展开</b> $\displaystyle \ln(x+1) = \sum_{k = 1}^\infty \frac{x^k}{k!}(-1)^{k-1}$。 
+</p>
+<p>
+    <b>定理5.19：自然指数函数</b> 存在唯一的函数$E: \R \to (0, +\infty)$，并且有以下性质：
+</p>
+<ol>
+    <li>
+        $E(0) = 1$；
+    </li>
+    <li>
+        $E$是双射，严格递增，并且$\displaystyle \lim_{x \to -\infty} E(x) = 0$，$\displaystyle \lim_{x \to \infty} E(x) = +\infty$；
+    </li>
+    <li>
+        $E(x+y) = E(x)E(y)$；
+    </li>
+    <li>
+        对于任意$q \in \Q$，$E(qx) = E(x)^q$。
+    </li>
+</ol>
+<p>
+    函数$E$又能记作$\exp(x)$。
+</p>
+<p>
+    <b>定义5.20：自然常数</b> 欧拉常数$e = E(1)$。并且，令$E(x) = e^x = exp(x)$等价。
+</p>
+<p>
+    <b>定义5.21：</b> 对于任意$x>0$和$y \in \R$，定义$x^y = \exp(y \ln x)$。
+</p>
+<p>
+    <b>定理5.22：自然指数函数幂级数展开</b> $\displaystyle e^x = \sum^\infty_{k = 0} \frac{x^k}{k!}$。
+</p>
+<p>
+    <b>定义5.23：反常积分</b> 假设$f$在所有$c \in (a,b)$黎曼可积，并且$\displaystyle \lim_{c \to b^-} \int^c_a f$存在，那么定义反常积分$\displaystyle \int^b_a f = \lim_{c \to b^-} \int^c_a f$。
+</p>
+<p>
+    <b>定理5.24：反常积分的p级数审敛法</b> 
+</p>
+<ol>
+    <li>
+        若$p \gt 1$，那么$\displaystyle \int^\infty_1 \frac{1}{x^p} dx = \frac{1}{p-1}$。
+    </li>
+    <li>
+        若$p \lt 1$，那么$\displaystyle \int^1_0 \frac{1}{x^p} dx = \frac{1}{1-p}$。
+    </li>
+</ol>
+<p>
+    <b style="color: red;">定理5.25：积分比较审敛法</b> 若$f: [a,\infty) \to \R, g : [a, \infty) \to \R$，并且对于任意的$x$，都有$|f(x)| \le g(x)$，那么
+</p>
+<ol>
+    <li>
+        如果$\int^\infty_a g$存在，那么$\int^\infty_a f$也存在，并且$| \int^\infty_a f | \le \int^\infty_a g$。
+    </li>
+    <li>
+        如果$\int^\infty_a f$发散，那么$\int^\infty_a g$也发散。
+    </li>
+</ol>
+<p>
+    <b>定理5.26：级数的积分审敛法</b> 假设$f: [k, +\infty) \to \R$非负并且单调递减。那么，$\displaystyle \sum_{n \ge k} f(n)$收敛的充要条件是$\displaystyle \int^\infty_k f$收敛，并且如果$\displaystyle \int^\infty_k f \le \infty$，有$\displaystyle \int^\infty_k f \le \sum_{n \ge k} f(n) \le f(k) + \int^\infty_k f$。
+</p>
+<br><br>
+<hr>
+
+<h3 id="函数列"><a href="#函数列" class="headerlink" title="函数列"></a>函数列</h3><p>
+    <b>定义6.1：点收敛</b> 假设有函数列$\{f_n\}_{n \ge 1} : S \to \R$。如果对于$f: S \to \R$，有对任意的$x \in S$，$\displaystyle \lim_{n \to \infty} f_n(x) = f(x)$，那么称$\{f_n\}$点收敛于$f$。
+</p>
+<p>
+    <b>定义6.2：一致收敛</b> 函数列$\{f_n\}$一致收敛于$f$，如果对于任意的$\varepsilon > 0$，都存在$N \in \N$，使得对任意的$n \ge N$和$x \in S$，有$|f_n(x) - f(x)| \lt \varepsilon$。
+</p>
+<p>
+    <b>定义6.3：一致范数</b> 假设$f: S \to \R$有界，定义$f$在$S$上的一致范数为$\displaystyle \|f\|_u = \|f\|_{L^\infty(S)} = \sup_{x \in S} |f(x)|$。
+</p>
+<p>
+    <b style="color: red;">定理6.4：一致收敛</b> 函数列$\{f_n\}$一致收敛于$f$的充要条件是$\displaystyle \lim_{n \to \infty} \|f_n - f\|_u = 0$。
+</p>
+<p>
+    <b>性质6.5：</b> $\|f+g\|_u \le \|f\|_u + \|g\|_u$。
+</p>
+<p>
+    <b>推论6.6：</b> 如果$\{f_n\}$在$S$上一致收敛于$f$，那么$f_n$在$S$上点收敛于$f$。
+</p>
+<p>
+    <b>定义6.7：一致柯西收敛</b> 如果有界函数列$f_n: S \to \R$有$\forall \varepsilon \gt 0, \exists N$使得对任意的$n, m \ge N$，$\|f_n - f_m\|_u \lt \varepsilon$，那么称$\{f_n\}$在$S$上一致柯西收敛。
+</p>
+<p>
+    <b>推论6.8：</b> 函数列一致柯西收敛的充要条件是函数列一致收敛。
+</p>
+<p>
+    <b>定理6.9：</b> 假设连续有界函数列$f_n: S \to \R$在$S$上一致收敛于$f$，那么$f$也是连续且有界的。
+</p>
+<p>
+    <b style="color: red;">定理6.10：</b> 假设$f_n \in \mathscr R[a,b]$，并且$f_n$在$[a,b]$上一致收敛于$f$，那么$f \in \mathscr R[a,b]$，并且$\displaystyle \lim_{n \to \infty} \int^b_a f_n = \int^b_a f$。
+</p>
+<p>
+    <b style="color: red;">定理6.11：</b> 假设存在有界区间$I$，并且$f_n \in C^1(I)$，那么如果
+</p>
+<ol>
+    <li>
+        存在$c \in I$使得$f_n(c)$收敛于某个数，
+    </li>
+    <li>
+        存在$g \in C^1(I)$使得$f_n' \to g$在$I$上一致收敛，
+    </li>
+</ol>
+<p>
+    那么存在$f \in C^1(I)$，并且$f' = g$，使得$f_n$在$I$上一致收敛于$f$。
+</p>
+<p>
+    <b>定理6.12：幂级数</b>
+</p>
+<br><br>
+<hr>
+
+<h3 id="度量空间"><a href="#度量空间" class="headerlink" title="度量空间"></a>度量空间</h3><p>
+    <b>定义7.1：</b> 定义度量空间$(X,d)$，其中$X$是集合，映射$d: X \times X \to [0, +\infty)$称作度量，并且满足
+</p>
+<ol>
+    <li>
+        <b>正定性：</b> $d(x,y) \ge 0$，并且当且仅当$x=y$时$d(x,y) = 0$。
+    </li>
+    <li>
+        <b>对称性：</b> $d(x,y) = d(y,x)$。
+    </li>
+    <li>
+        <b>三角不等式：</b> $d(x,y) \le d(x, z) + d(z, y)$。
+    </li>
+</ol>
+<p>
+    <b style="color: red;">定理7.2：柯西施瓦茨不等式</b> 假设向量$\boldsymbol a, \boldsymbol b \in \R^n$，那么$\boldsymbol a \cdot \boldsymbol b \le \|\boldsymbol a\| \|\boldsymbol b\|$。
+</p>
+<p>
+    <b>定义7.3：有界性</b> 非空度量空间$S \subset (X,d)$有界的定义是存在$p \in X$和$M \gt 0$使得对任意的$x \in S$，都有$d(p, x) \le M$。定义半径$\text{diam}(S) = \sup \{d(x,y): x,y \in S\}$。
+</p>
+<p>
+    <b>定理7.4：</b> $S \ne \emptyset$有界的充要条件是$\text{diam}(S) \lt \infty$。
+</p>
+<p>
+    <b>定义7.5：开球与闭球</b> 开球$B(x,r) = \{y \in X: d(x,y) \lt r\}$。闭球$C(x,r) = \{y \in X: d(x,y) \le r\}$。
+</p>
+<p>
+    <b>定义7.6：开、闭集</b> 集合$A \subset (X,d)$是开集，如果$\forall x \in A, \exists \varepsilon > 0$使得$B(x,\varepsilon) \subset A$。如果$A^C$是开集，那么称$A$是闭集。
+</p>
+<p>
+    <b>推论7.7：</b> 对于度量空间$(X,d)$，
+</p>
+<ol>
+    <li>
+        $\emptyset$和$X$是闭开集，即又开又闭的集合。
+    </li>
+    <li>
+        任意开集的并集是开集。
+    </li>
+    <li>
+        有限个开集的交集是开集。
+    </li>
+    <li>
+        有限个闭集的并集是闭集。
+    </li>
+    <li>
+        任意闭集的交集是闭集。
+    </li>
+</ol>
+<p>
+    <b>定理7.8：</b> 在度量空间$(X,d)$中，开球$B(x, \varepsilon)$是开集，闭球$C(x,\varepsilon)$是闭集。
+</p>
+<p>
+    <b>定义7.9：闭包（Closure）</b> 定义集合$A \subset (X,d)$的闭包为包含$A$的最小闭集，即$\overline{A} = \cap_{F \text{ closed, } F \subset A} F$。 
+</p>
+<p>
+    <b>性质7.10：闭包的性质</b>
+</p>
+<ol>
+    <li>
+        $A \subset \overline A$。
+    </li>
+    <li>
+        $\overline A$是闭集。
+    </li>
+    <li>
+        $A$是闭集当且仅当$A = \overline A$。
+    </li>
+    <li>
+        $x \in \overline A$当且仅当$\forall \varepsilon > 0, B(x, \varepsilon) \cap A \ne \emptyset$。
+    </li>
+</ol>
+<p>
+    <b>定义7.11：内部（Interior）</b> 定义集合$A$的内部为$A$的最大开子集，即$A^\circ = \cup_{E \text{ open, } E \subset A} E$。
+</p>
+<p>
+    <b>性质7.12：内部的性质</b>
+</p>
+<ol>
+    <li>
+        $A^\circ \subset A$。
+    </li>
+    <li>
+        $A^\circ$是开集。
+    </li>
+    <li>
+        $A$是开集当且仅当$A = A^\circ$。
+    </li>
+    <li>
+        $x \in A^\circ$当且仅当$\exists \varepsilon > 0$使得$B(x,\varepsilon) \subset A$。
+    </li>
+</ol>
+<p>
+    <b>定义7.13：边界</b> 集合$A$的边界是$\partial A = \overline A \backslash A^\circ$。
+</p>
+<p>
+    <b>推论7.14：</b> $x \in \partial A$的充要条件是$\forall \varepsilon > 0, B(x, \varepsilon) \cap A \ne \emptyset$并且$B(x,\varepsilon) \cap A^C \ne \emptyset$。
+</p>
+<p>
+    <b>定义7.15：连通集</b> 如果非空度量空间$(X, d)$的闭开子集只有$\emptyset$和$X$自身，那么称它为连通集。
+</p>
+<p>
+    <b>定义7.16：不连通集</b> 在度量空间$(X,d)$中，假设$S \subset X$。如果在$X$中存在开集$U_1$和$U_2$，使得$U_1 \cap U_2 \cap S = \emptyset$，$U_1 \cap S \ne \emptyset$，$U_2 \cap S \ne \emptyset$，并且$S = (U_1 \cap S) \cup (U_2 \cap S)$，那么称$S$为不连通集。
+</p>
+<p>
+    <b>定义7.17：子空间</b> 令$Y \subset X$使得$(Y,d)$是$(X,d)$的子空间。那么，$U$在$(Y,d)$中是开集的充要条件是存在开集$V \subset (X,d)$使得$U = V \cap Y$。
+</p>
+<p>
+    <b>定义7.18：开覆盖</b> 集合$K \subset X$的一个开覆盖是对任意开集$U_\lambda$，$\displaystyle U = \{U_\lambda : K \subset \bigcup_\lambda U_\lambda\}$。
+</p>
+<p>
+    <b>定义7.19：紧致集</b> 若集合$K \subset X$的任意开覆盖存在有限子覆盖，则称$K$是紧致集，或紧集。即，存在有限集合$\{\lambda_1, \lambda_2, ..., \lambda_k\}$使得$K \subset \bigcup^k_{i = 1} U_{\lambda_i}$。
+</p>
+<p>
+    <b>定理7.20：（A）</b> 紧致集是有界闭集。
+</p>
+<p>
+    <b>定理7.20：（B）数列紧致</b> $K \subset (X,d)$是紧致集的充要条件是对于任意的$\{x_n\} \subset K$，存在$\{x_{n_i}\} \subset \{x_n\}$使得$x_{n_i}$收敛于$x \in K$。
+</p>
+<p>
+    <b>定理7.20：（C）</b> 如果$K$是紧致的，并且$E$是闭集，那么$K \cap E$是紧致的。
+</p>
+<p>
+    <b>定理7.20：（D）海涅-博雷尔定理</b> 集合$K \subset \R^n$是紧致集的充要条件是$K$是有界闭集。
+</p></div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>Rebuild</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://www.rebuild.moe/math/analysis-cheatsheet/" title="数学分析作弊纸">https://www.rebuild.moe/math/analysis-cheatsheet/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/japanese/japanese-kanbun/" rel="prev" title="用日语学中文"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">用日语学中文</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/programming/linux/tutorial/2-files/" rel="next" title="GNU/Linux Introduction Chapter 2"><span class="post-nav-text">GNU/Linux Introduction Chapter 2</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>在下方选择方式留言评论。</span><br><span>Comment below with different methods!</span><br><a class="hty-button hty-button--raised" id="github-issues" target="_blank" rel="noopener" href="https://github.com/Shimogawa/shimogawa.github.io/issues?q=is:issue+数学分析作弊纸">GitHub Issues</a></div><div class="toggle-comment-system" style="margin: 1rem auto"><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target="#valine-container" onclick="showComment(this.dataset.target)">valine</a><style>.utterances {
+  display: none;
+}</style><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target=".utterances" onclick="showComment(this.dataset.target)">utterances</a><script>function hideAllComment() {
+  //- hide all
+  document.querySelectorAll('.toggle-comment-btn').forEach((btn) => {
+    const container = document.querySelector(btn.dataset.target);
+    if (container) {
+      container.style.display = "none";
+    }
+  });
+}
+function showComment(target) {
+  hideAllComment();
+  //- show target
+  const targetContainer = document.querySelector(target);
+  if (targetContainer) {
+    targetContainer.style.display = "block";
+  }
+}
+</script></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
+  const valineConfig = {"enable":true,"appId":"yhOSuPGGylx1z2fQesIekFsm-MdYXbMMI","appKey":"Qcvy0HlcSpaIiHVOqM1VO9tj","placeholder":"Your comment goes here...","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":true,"enableQQ":true,"meta":["nick","mail","link"],"lang":"en-us","requiredFields":["nick","mail"],"emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"},"el":"#valine-container"}
+  valineConfig.path = "/math/analysis-cheatsheet/"
+  new Valine(valineConfig)
+}, window.Valine);</script><style>.utterances {
+  max-width: 100%;
+}</style><script src="https://utteranc.es/client.js" repo="Shimogawa/shimogawa.github.io" issue-term="pathname" label="utter" theme="github-light" crossorigin="anonymous" async></script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> Rebuild</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.1</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.8.11</span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="搜索"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="/js/search/local-search.js" defer type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-close-line"></use></svg></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="搜索..." value=""></div><div id="local-search-result"></div></div><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script></div></body></html>
