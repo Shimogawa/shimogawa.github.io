@@ -6,12 +6,12 @@ font:
   cdn:
     enable: true
     lib:
-      - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&family=Fira+Mono:wght@500&family=Source+Sans+Pro&display=swap
+      - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;900&family=Fira+Mono:wght@500&family=Inter:wght@400;600&display=swap
   serif:
     family: "'Noto Serif SC', STZhongsong, STKaiti, KaiTi, Roboto, serif"
     weight: 900
   sans_serif:
-    family: "'Source Sans Pro', Roboto, Arial, 'Noto Serif SC', 'Microsoft YaHei', sans-serif"
+    family: "-apple-system, 'Inter', Roboto, Arial, 'Noto Serif SC', 'Microsoft YaHei', sans-serif"
     weight: 400
   monospace:
     family: "'Fira Mono', 'Source Code Pro', 'Courier New', Courier, Consolas, Monaco, monospace"
@@ -163,8 +163,8 @@ utterances:
 
 valine:
   enable: true
-  appId: yhOSuPGGylx1z2fQesIekFsm-MdYXbMMI
-  appKey: Qcvy0HlcSpaIiHVOqM1VO9tj
+  appId: eOqK1cJGouFnL29iDTFUhM8T-gzGzoHsz
+  appKey: QkHeJzYGxssMxaMRo4URc6rw
   placeholder: Your comment goes here...
   # serverURLs: https://www.rebuild.moe
   meta:
