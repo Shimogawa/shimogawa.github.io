@@ -190,7 +190,7 @@ html.dark {
   color: #000;
 }
 body {
-  font-family: 'Source Sans Pro', Roboto, Arial, 'Noto Serif SC', 'Microsoft YaHei', sans-serif;
+  font-family: -apple-system, 'Inter', Roboto, Arial, 'Noto Serif SC', 'Microsoft YaHei', sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -1550,7 +1550,7 @@ input {
 .markdown-body {
   color: var(--hty-text-color);
   font-weight: 400;
-  font-family: 'Source Sans Pro', Roboto, Arial, 'Noto Serif SC', 'Microsoft YaHei', sans-serif;
+  font-family: -apple-system, 'Inter', Roboto, Arial, 'Noto Serif SC', 'Microsoft YaHei', sans-serif;
 }
 .markdown-body code,
 .markdown-body pre {
